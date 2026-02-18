@@ -1,0 +1,179 @@
+---
+alwaysApply: true
+---
+
+# 任务描述：文字稿转 NaniNovel 脚本
+
+你是一个将文字稿转换为 **NaniNovel** 脚本的 AI 助手，产出内容将用于《魔法少女的魔女裁判》的二次创作作品。
+
+---
+
+## 一、核心任务
+
+| 任务 | 说明 |
+|:-----|:-----|
+| **输入** | 用户提供的文字稿 |
+| **输出** | 对应的 NaniNovel 脚本，写入指定 `.nani` 文件 |
+| **原则** | 完整复制剧本内容，**禁止自由创作** |
+
+---
+
+## 二、修改规则
+
+当指定文件中已有内容时：
+
+- **以最新剧本为准**，仔细检查并修正与旧剧本的出入
+- **仅可修改**：台词、对白、旁白文本
+- **严禁修改**：注释、`@char` 立绘指令、`@back` 背景指令、`@bgm` 等指令
+
+---
+
+## 三、换行规则
+
+1. **剧本中明确出现 `//`**：在该处插入 `<br>` 进行换行
+2. **单句台词过长**：在合适位置插入 `<br>` 提高可读性
+
+示例：
+
+```naninovel
+Sherry: 我可是看着悬疑小说长大的，那些故事里的凶手都太笨啦，<br>要是我来的话，什——么证据都不会留下的哦！
+```
+
+---
+
+## 四、人物立绘 (`@char`)
+
+### 4.1 基本格式
+
+```naninovel
+@char CharacterName.ArmL1,ArmR1,Expression pos:x,y scale:1.0 !Lazy
+```
+
+- **CharacterName**：角色代码（见 [02_role_name.mdc](./02_role_name.mdc)）
+- **参数**：`pos` 控制位置，`scale` 控制缩放，`time` 控制移动时长
+
+### 4.2 位置规范
+
+- 除特殊说明（如要求立绘有特殊移动）外，应使用下面默认的设定。
+
+| 场景 | 位置 |
+|:-----|:-----|
+| 单角色 | `pos:50,50`（居中） |
+| 双角色 | 左 `pos:25,50`，右 `pos:75,50` |
+| 范围 | `pos` 的 x、y 应在 `[0, 100]` 内 |
+
+### 4.3 参数说明
+
+- **`pos:x,y`**：立绘在屏幕上的位置
+- **`time:0.5`**：从上一位置移动到此位置所需时间（秒）；不写则立即出现
+- **`!Lazy`**：延迟加载，建议保留
+
+### 4.4 进入动画示例
+
+角色从右侧进入：
+
+```naninovel
+@char Sherry.ArmL1,ArmR1,Default pos:150,50 scale:1.0 !Lazy
+@char Sherry.ArmL1,ArmR1,Default pos:75,50 scale:1.0 !Lazy time:0.5
+```
+
+### 4.5 隐藏立绘
+
+```naninovel
+@hideChars !Lazy       ; 隐藏所有角色
+@hide Hanna !Lazy      ; 隐藏指定角色
+```
+
+---
+
+## 五、背景 (`@back`)
+
+- 对照表见 [05_background.mdc](./05_background.mdc)
+- 你应该保证每个背景切换时都能有一个切换特效
+- 典型用法：
+
+```naninovel
+@back 23_6 Scale:{g_backgroundDefaultScale} !Lazy
+; 最上面的黑色遮罩层VerticalBlindGradually特效消失
+@back Transparent.Custom SubId:"Overlay" dissolve:"VerticalBlindGradually" tint:"#000000" time:0.99 !Lazy
+; 等待一小会到特效演完
+@Wait "0.9"
+```
+
+---
+
+## 六、BGM 与音效
+
+### 6.1 BGM
+
+- **对照表**：[03_BGM.mdc](./03_BGM.mdc)
+- **使用原则**：**仅当剧本明确标注**需要播放或停止某 BGM 时，才添加对应指令
+
+```naninovel
+@bgm "Bgm_6_1"
+@bgm "Bgm_12_1_Loop" intro:"Bgm_12_1_Intro"
+@stopBgm           ; 停止当前所有 BGM
+@stopBgm Bgm_17_1  ; 停止指定 BGM
+```
+
+### 6.2 SFX
+
+- **对照表**：[04_SFX.mdc](./04_SFX.mdc)
+- 剧本明确需要音效时使用 `@sfx "Sfx_xxx"`
+
+---
+
+## 七、对话与旁白格式
+
+### 7.1 角色对话
+
+```naninovel
+CharacterName: 台词内容
+```
+
+### 7.2 旁白 / 叙述
+
+无角色前缀，直接写文本：
+
+```naninovel
+梅露露点了点头，一路小跑着离开了。
+```
+
+### 7.3 文本修饰
+
+- **斜体**：`[i]文本[/i]`
+- **换行**：`<br>`
+
+---
+
+## 八、常用指令速查
+
+| 指令 | 用途 |
+|:-----|:-----|
+| `@Wait "0.5"` | 等待指定秒数 |
+| `@char` | 显示/移动角色立绘 |
+| `@hide` / `@hideChars` | 隐藏立绘 |
+| `@back` | 切换背景 |
+| `@bgm` / `@stopBgm` | 播放/停止 BGM |
+| `@sfx` | 播放音效 |
+| `@Gosub` | 调用子脚本 |
+
+---
+
+## 九、其他规则文件
+
+| 文件 | 用途 |
+|:-----|:-----|
+| [02_role_name.mdc](./02_role_name.mdc) | 人物名称与角色代码对照表，**务必按此识别说话者** |
+| [03_BGM.mdc](./03_BGM.mdc) | BGM 调用语句 |
+| [04_SFX.mdc](./04_SFX.mdc) | 音效调用语句 |
+| [05_background.mdc](./05_background.mdc) | 背景调用语句 |
+| [06_Chinese_to_Japanese.mdc](./06_Chinese_to_Japanese.mdc) | （施工中） |
+
+---
+
+## 十、代码规范
+
+- 在逻辑段落之间合理换行
+- 善用 one-shot / few-shot 思维，参考现有脚本风格
+- 剧本中人物口癖明显，需结合 [02_role_name.mdc](./02_role_name.mdc) 准确识别说话者

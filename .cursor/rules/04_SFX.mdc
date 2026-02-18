@@ -1,0 +1,192 @@
+---
+alwaysApply: false
+---
+### 音效 (SFX) 速查表
+
+此列表整合了游戏内的音效文件名和脚本注释，方便查阅。
+
+#### 通用音效 (Common)
+
+| 脚本值                | 文件名描述    | 中文/日文描述                        |
+| :-------------------- | :------------ | :----------------------------------- |
+| `@sfx "Sfx_Common_1"` | Notice1       | 噔噔噔！引起注意的提示音             |
+| `@sfx "Sfx_Common_2"` | Notice2       | 叮当！明亮的提示音                   |
+| `@sfx "Sfx_Common_3"` | Decision      | 决定音，用于表示关键证据/线索提出    |
+| `@sfx "Sfx_Common_4"` | Hit           | 击中音，用于表示人物被反驳           |
+| `@sfx "Sfx_Common_5"` | Conversion    | 话题转换音，用于引出新角色对话       |
+| `@sfx "Sfx_Common_6"` | Be shocked    | 砸钢琴低音区的声音，用于表示角色吃瘪 |
+| `@sfx "Sfx_Common_7"` | Negative down | 下降音，用于表示角色的负面态度       |
+
+#### 剧情音效 (Scenario)
+
+| 脚本值           | 文件名描述                    | 中文/日文描述                  |
+| :--------------- | :---------------------------- | :----------------------------- |
+| `@sfx "Sfx_1"`   | Wake up                       | 醒来                           |
+| `@sfx "Sfx_3"`   | Monitor                       | 监视器启动音                   |
+| `@sfx "Sfx_4"`   | Lock prison                   | 锁上牢房                       |
+| `@sfx "Sfx_5"`   | Hikizuru oto                  | 黏糊糊的物体移动（拖拽的声音） |
+| `@sfx "Sfx_6"`   | Fall down                     | 摔倒                           |
+| `@sfx "Sfx_7"`   | Go up the stairs(Reverb)      | 上楼梯 (带混响)                |
+| `@sfx "Sfx_8"`   | Owl flapping sound            | 猫头鹰振翅声                   |
+| `@sfx "Sfx_9"`   | Swing down                    | 物件挥动                       |
+| `@sfx "Sfx_10"`  | Body hit                      | 身体撞击声                     |
+| `@sfx "Sfx_11"`  | Body hit2_                    | 身体撞击声2                    |
+| `@sfx "Sfx_12"`  | Meat cut                      | 刀刃切割（切肉声）             |
+| `@sfx "Sfx_13"`  | Head drop                     | 头部掉落                       |
+| `@sfx "Sfx_14"`  | Owl barking sound             | 猫头鹰通知声                   |
+| `@sfx "Sfx_15"`  | Spray                         | 喷雾声                         |
+| `@sfx "Sfx_16"`  | Crush apple                   | 压碎苹果                       |
+| `@sfx "Sfx_17"`  | Fall to ground 01             | (东西)掉到地上                 |
+| `@sfx "Sfx_18"`  | Reject shake hands            | 挥开/拍掉手                    |
+| `@sfx "Sfx_19"`  | body fall down                | (人)倒下                       |
+| `@sfx "Sfx_20"`  | Crash dish                    | 盘子碎裂                       |
+| `@sfx "Sfx_22"`  | Indoor wood open              | 打开室内木门                   |
+| `@sfx "Sfx_23"`  | Fall from a height            | 从高处落下                     |
+| `@sfx "Sfx_24"`  | Silent_waves                  | 微弱的波浪声                   |
+| `@sfx "Sfx_25"`  | Hit wall                      | 捶墙                           |
+| `@sfx "Sfx_26"`  | Chess on the floor            | (东西)散落一地                 |
+| `@sfx "Sfx_27"`  | Hit human                     | 撞到人                         |
+| `@sfx "Sfx_28"`  | Camera shutter                | 相机快门                       |
+| `@sfx "Sfx_29"`  | Notification sound            | (手机)通知音                   |
+| `@sfx "Sfx_30"`  | Fire                          | 点火声                         |
+| `@sfx "Sfx_31"`  | Tea                           | 泡茶声                         |
+| `@sfx "Sfx_32"`  | Hits wood table               | 敲木桌                         |
+| `@sfx "Sfx_33"`  | Bell sound                    | 审判庭钟声                     |
+| `@sfx "Sfx_34"`  | Panpakapan                    | 哒-哒哒哒！ (庆祝音效)         |
+| `@sfx "Sfx_35"`  | Human heartbeat               | 心跳声                         |
+| `@sfx "Sfx_36"`  | Gear(Reverb)                  | 大齿轮转动 (带混响)            |
+| `@sfx "Sfx_37"`  | Open object                   | 石质物件滑动                   |
+| `@sfx "Sfx_38"`  | Gun fire                      | 枪声                           |
+| `@sfx "Sfx_39"`  | Fall bird                     | 鸟坠落                         |
+| `@sfx "Sfx_40"`  | FUMIKIRI                      | 铁路道口警报声                 |
+| `@sfx "Sfx_41"`  | Pull up the curtains          | 拉开窗帘                       |
+| `@sfx "Sfx_42"`  | Book on desk                  | 书放桌上                       |
+| `@sfx "Sfx_43"`  | Turn page book                | 翻书声                         |
+| `@sfx "Sfx_45"`  | Brokem cloth                  | 撕破布料                       |
+| `@sfx "Sfx_46"`  | Fire bang                     | 火焰爆燃声                     |
+| `@sfx "Sfx_47"`  | Shower                        | 淋浴声                         |
+| `@sfx "Sfx_49"`  | Two_Run underground           | 两人地下奔跑                   |
+| `@sfx "Sfx_50"`  | Punch ground                  | 物件坠地                       |
+| `@sfx "Sfx_51"`  | One_Run underground           | 一人地下奔跑                   |
+| `@sfx "Sfx_52"`  | Broken handcuffs              | 弄断手铐                       |
+| `@sfx "Sfx_53"`  | Slashing anan                 | 斩击人体（斩击安安）           |
+| `@sfx "Sfx_54"`  | Train pass                    | 火车经过                       |
+| `@sfx "Sfx_55"`  | Bushes sound                  | 灌木丛声                       |
+| `@sfx "Sfx_56"`  | High speed thread             | 丝线高速摩擦（拉链）           |
+| `@sfx "Sfx_57"`  | School chime                  | 学校铃声                       |
+| `@sfx "Sfx_58"`  | Run corridor                  | 走廊奔跑                       |
+| `@sfx "Sfx_59"`  | Digging sound                 | 挖掘声                         |
+| `@sfx "Sfx_60"`  | Drop smart phone              | 手机掉落                       |
+| `@sfx "Sfx_61"`  | Push book stand shely         | 推倒书架                       |
+| `@sfx "Sfx_62"`  | Open meatl door               | 打开金属门                     |
+| `@sfx "Sfx_64"`  | Move noise in the warehouse   | 仓库中，物件移动噪音           |
+| `@sfx "Sfx_65"`  | Hard hit punch ground         | 重击地面                       |
+| `@sfx "Sfx_66"`  | Touch paper                   | 触摸纸张                       |
+| `@sfx "Sfx_68"`  | Arrival elevator              | 电梯到达                       |
+| `@sfx "Sfx_70"`  | Multiple_Run pathway          | 多人路径奔跑                   |
+| `@sfx "Sfx_71"`  | Multiple_Run outdoor          | 多人户外奔跑                   |
+| `@sfx "Sfx_72"`  | One_Footsteps leaving         | 一人脚步声离开                 |
+| `@sfx "Sfx_73"`  | One_approaching footsteps_V2_ | 一人脚步声接近V2               |
+| `@sfx "Sfx_74"`  | Noise                         | 音响噪音                       |
+| `@sfx "Sfx_75"`  | Hard_open door                | 用力开门                       |
+| `@sfx "Sfx_76"`  | Pushing back                  | 推回                           |
+| `@sfx "Sfx_77"`  | Hit door                      | 撞门                           |
+| `@sfx "Sfx_78"`  | Far foot sound                | 远处脚步声                     |
+| `@sfx "Sfx_79"`  | Hit metal                     | 撞击金属                       |
+| `@sfx "Sfx_80"`  | Hit whip                      | 鞭打声                         |
+| `@sfx "Sfx_81"`  | Fall human                    | 人倒下                         |
+| `@sfx "Sfx_82"`  | Meet cook                     | 煎肉                           |
+| `@sfx "Sfx_83"`  | Cooking stew                  | 炖煮声                         |
+| `@sfx "Sfx_84"`  | TONKATSU                      | 切炸猪排                       |
+| `@sfx "Sfx_85"`  | Hit punch human               | 拳击人                         |
+| `@sfx "Sfx_86"`  | Push switch                   | 按开关                         |
+| `@sfx "Sfx_89"`  | Be stuck GUSA!!               | 利器刺入声                     |
+| `@sfx "Sfx_90"`  | Multiple_Be stuck GUSA!!      | 多次利器刺入声                 |
+| `@sfx "Sfx_92"`  | Land mine switch              | 地雷开关                       |
+| `@sfx "Sfx_93"`  | Explosion                     | 爆炸声                         |
+| `@sfx "Sfx_94"`  | HURIKO YAIBA                  | 刀刃摩擦撞击                   |
+| `@sfx "Sfx_95"`  | Belt                          | 皮带声                         |
+| `@sfx "Sfx_96"`  | Smartphone hit floor          | 手机掉到地上                   |
+| `@sfx "Sfx_97"`  | Slow foot step                | 缓慢脚步声                     |
+| `@sfx "Sfx_98"`  | Lever GACHAKON                | 杠杆嘎吱声 (日语)              |
+| `@sfx "Sfx_99"`  | Electric                      | 电流声                         |
+| `@sfx "Sfx_100"` | Spark                         | 火花                           |
+| `@sfx "Sfx_101"` | Pull up                       | 拉起                           |
+| `@sfx "Sfx_103"` | Pipopa                        | 哔啵声 (电话按键音)            |
+| `@sfx "Sfx_104"` | Hang up                       | 挂断电话                       |
+| `@sfx "Sfx_105"` | Train near                    | 火车靠近                       |
+| `@sfx "Sfx_107"` | Open cabnet                   | 打开柜子                       |
+| `@sfx "Sfx_108"` | Neck bones                    | 颈骨断裂                       |
+| `@sfx "Sfx_109"` | Controller fall               | 控制面板掉落                   |
+| `@sfx "Sfx_111"` | Pen write paper               | 笔写纸声                       |
+| `@sfx "Sfx_112"` | Tray put on desk              | 托盘放桌上                     |
+| `@sfx "Sfx_113"` | Reverse spray                 | 反向喷雾（颜料被收回瓶内）     |
+| `@sfx "Sfx_114"` | MAHOU SYOUJO                  | 释放魔法音效                   |
+| `@sfx "Sfx_115"` | Take by force                 | 抢夺                           |
+| `@sfx "Sfx_116"` | Save body                     | 身体移动                       |
+| `@sfx "Sfx_117"` | Hit face                      | 击打脸部                       |
+| `@sfx "Sfx_118"` | Many books                    | 放下许多书                     |
+| `@sfx "Sfx_119"` | Open prison door              | 打开牢房门                     |
+| `@sfx "Sfx_120"` | Crash glass                   | 玻璃碎裂                       |
+| `@sfx "Sfx_121"` | Water drop                    | 水滴声                         |
+| `@sfx "Sfx_122"` | Sword whip                    | 飞刀声（物体快速移动声）       |
+| `@sfx "Sfx_123"` | Knife stuck in board          | 刀刺入木板                     |
+| `@sfx "Sfx_125"` | One_Clap_                     | 单人拍手                       |
+| `@sfx "Sfx_126"` | One_Run room                  | 一人房间奔跑                   |
+| `@sfx "Sfx_127"` | Hanging                       | 悬挂声                         |
+| `@sfx "Sfx_128"` | Loose screw                   | 螺丝松动                       |
+| `@sfx "Sfx_129"` | Walking up the house stairs   | 走上楼梯                       |
+| `@sfx "Sfx_130"` | Running down the house stairs | 跑下楼梯                       |
+| `@sfx "Sfx_131"` | Thunder                       | 雷声                           |
+| `@sfx "Sfx_133"` | Machine gun                   | 机关枪声                       |
+| `@sfx "Sfx_134"` | Button key push               | 按键声                         |
+| `@sfx "Sfx_135"` | Kusya kusya paper             | 揉纸声                         |
+| `@sfx "Sfx_136"` | Move chair                    | 移动椅子                       |
+| `@sfx "Sfx_137"` | Hard open wood door           | 用力打开木门                   |
+| `@sfx "Sfx_140"` | Kick bucket&Liquid water      | 踢桶和液体水声                 |
+| `@sfx "Sfx_141"` | Scrub the floor               | 擦洗地板                       |
+| `@sfx "Sfx_142"` | Bubble                        | 气泡声                         |
+| `@sfx "Sfx_143"` | SYOUKYAKURO ASARU             | 翻找焚化炉                     |
+| `@sfx "Sfx_144"` | Close wood door               | 关闭木门                       |
+| `@sfx "Sfx_145"` | Jumping into water            | 跳入水中                       |
+| `@sfx "Sfx_146"` | Elevator buzzer               | 电梯蜂鸣器                     |
+| `@sfx "Sfx_147"` | Elevator move_TENBAN          | 电梯顶板移动                   |
+| `@sfx "Sfx_148"` | Break ice                     | 破冰                           |
+| `@sfx "Sfx_149"` | Small rock fall               | 小石块掉落                     |
+| `@sfx "Sfx_150"` | Hard falling rock             | 大块岩石掉落                   |
+| `@sfx "Sfx_151"` | Broken pen                    | 笔断裂                         |
+| `@sfx "Sfx_152"` | Pen fall on floor             | 笔掉到地上                     |
+| `@sfx "Sfx_153"` | Strangling sounds             | 窒息/勒颈声                    |
+| `@sfx "Sfx_154"` | Helicopter                    | 直升机声                       |
+| `@sfx "Sfx_156"` | Drowning                      | 溺水声                         |
+| `@sfx "Sfx_157"` | Elevator door open            | 电梯门打开                     |
+| `@sfx "Sfx_159"` | Hit metal on metal            | 金属撞击金属                   |
+| `@sfx "Sfx_160"` | Guard a sword                 | 格挡剑                         |
+| `@sfx "Sfx_161"` | Lost Bullet                   | 弹药用尽                       |
+| `@sfx "Sfx_162"` | Hard heartbeat                | 剧烈心跳                       |
+| `@sfx "Sfx_163"` | coming foot out door          | 脚步声出门                     |
+| `@sfx "Sfx_164"` | Broken tree                   | 树木断裂                       |
+| `@sfx "Sfx_165"` | Slow open big door            | 缓慢打开大门                   |
+| `@sfx "Sfx_167"` | Hard hit head                 | 重击头部                       |
+| `@sfx "Sfx_168"` | fall out deadman              | 尸体掉落                       |
+| `@sfx "Sfx_169"` | Light off                     | 关灯                           |
+| `@sfx "Sfx_170"` | Blood                         | 血液/液体声                    |
+| `@sfx "Sfx_171"` | Blood shower                  | 血液喷溅                       |
+| `@sfx "Sfx_173"` | One_Run outdoor               | 一人户外奔跑                   |
+| `@sfx "Sfx_175"` | Break ice2                    | 破冰                           |
+| `@sfx "Sfx_176"` | Break ice3                    | 特殊破冰                       |
+| `@sfx "Sfx_177"` | abareru shely2                | 雪莉搞破坏                     |
+| `@sfx "Sfx_178"` | Landing sound                 | 脚落地                         |
+| `@sfx "Sfx_179"` | Lie down on bed               | 躺到床上                       |
+| `@sfx "Sfx_180"` | Be stuck GUSA!!delay          | 利器刺入声延迟                 |
+| `@sfx "Sfx_181"` | Laughing girl                 | 女孩笑声                       |
+| `@sfx "Sfx_182"` | Bubble2                       | 气泡声2                        |
+| `@sfx "Sfx_183"` | Hit whip2                     | 尺子鞭打声（远）               |
+| `@sfx "Sfx_184"` | Hit whip3                     | 尺子鞭打声（近）               |
+| `@sfx "Sfx_185"` | Breaking the iron door        | 铁门破裂                       |
+
+#### 系统音效 (System)
+
+| 脚本值                              | 文件名描述 |
+| :---------------------------------- | :--------- |
+| `@sfx "Sfx_System_SaveData_001_2x"` | 保存数据   |

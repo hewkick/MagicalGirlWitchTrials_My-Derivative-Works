@@ -1,0 +1,19 @@
+# EndToTitle
+
+@debate false
+@ResetText "Debate"
+@HidePrinter "Debate"
+
+@ProcessInput true set:Continue.true,Pause.false,Skip.true,ToggleSkip.true,SkipMovie.true,AutoPlay.false,ToggleUI.false,ShowBacklog.false,Rollback.false
+@StopBgm
+@HideUI ControlPanel,AutoToggle,WitchBookButtonUI,DebateUI AllowToggle:false
+@ResetText
+@back SubId:"Overlay" SolidColor tint:"#000000" time:{g_fadeDurationAtScenarioTransition} Lazy:false
+@Wait "{g_fadeDurationAtScenarioTransition}"
+
+@hideChars time:0 Lazy:false
+@hideStageScreen 0 time:0 Reset:true
+@hideStageScreen 1 time:0 Reset:true
+@unloadStage
+
+@ReturnToTitle
