@@ -1,0 +1,103 @@
+---
+alwaysApply: false
+---
+
+#### **角色配音 (Voice)**
+
+在二创剧本中为角色对话添加 AI 配音时，使用以下规则。
+
+---
+
+### 一、目录结构
+
+- **Voice 文件夹**：由用户手动创建，AI 不创建目录。
+- **音频文件**：放在 `Voice/` 内，命名与配音清单 CSV 中的「文件名」列一致（如 `Main_001.wav`）
+
+示例（剧本母文件夹为 `Hewkick_complement1_3`）：
+
+```
+Hewkick_complement1_3/
+├── Voice/           ← 用户手动创建的配音文件夹
+│   ├── Main_001.wav
+│   ├── Main_002.wav
+│   └── ...
+├── Scripts/
+│   └── Hewkick_complement1_3/
+│       ├── Main.nani
+│       └── Main_voice_list.csv
+└── ...
+```
+
+---
+
+### 二、`@voice` 指令格式
+
+```naninovel
+; 播放角色声音
+@voice "剧本母文件夹名/文件名"
+```
+
+**路径规则**：`剧本母文件夹名/文件名`（不含扩展名）
+
+| 剧本母文件夹       | 文件名   | 完整 @voice 路径              |
+| :----------------- | :------- | :---------------------------- |
+| Hewkick_complement1_3 | Main_001 | `Hewkick_complement1_3/Main_001` |
+| Hewkick_complement1_3 | Main_002 | `Hewkick_complement1_3/Main_002` |
+| TaffyStory000      | Noah_01  | `TaffyStory000/Noah_01`       |
+
+---
+
+### 三、生成配音清单
+
+在插入 `@voice` 之前，需先生成配音清单 CSV（供翻译、AI 配音、人工校对使用）。
+
+**工具**：`tools/nani_to_voice_list.py`
+
+**用法**（在项目根目录执行）：
+
+```bash
+# 基本用法：输出与 nani 同目录，文件名为 <脚本名>_voice_list.csv
+python tools/nani_to_voice_list.py <nani文件路径>
+
+# 指定输出路径
+python tools/nani_to_voice_list.py <nani文件路径> [输出CSV路径]
+```
+
+**示例**：
+
+```bash
+python tools/nani_to_voice_list.py Hewkick_complement1_3/Scripts/Hewkick_complement1_3/Main.nani
+# → 输出 Hewkick_complement1_3/Scripts/Hewkick_complement1_3/Main_voice_list.csv
+```
+
+**AI 自动执行**：当用户要求「生成配音清单」「提取配音列表」「为 xxx.nani 生成 voice list」等时，应主动执行上述命令，无需用户手动运行。
+
+---
+
+### 四、在脚本中插入配音
+
+1. **配音清单**：使用上述工具生成 `*_voice_list.csv`，其中「文件名」列（如 `Main_001`、`Main_002`）按对话出现顺序编号
+2. **插入位置**：在每条**角色对话行**前插入对应的 `@voice` 指令
+3. **顺序对应**：CSV 中第 N 行 → 脚本中第 N 条角色对话 → `@voice "母文件夹名/文件名"`
+
+示例：
+
+```naninovel
+@char Hanna.ArmL1,ArmR2,Pensive pos:75,50 Scale:1.0 !Lazy
+@voice "Hewkick_complement1_3/Main_004"
+Hanna: （真是的，明明就要当凶手了，却还那么兴奋...）
+
+@char Hanna.ArmL1,Default,ArmR1 pos:75,50 Scale:1.0 !Lazy
+@voice "Hewkick_complement1_3/Main_005"
+Hanna: 那么，我就把绳子交给你了。
+@voice "Hewkick_complement1_3/Main_006"
+Hanna: 要让这座监狱的管理者知道，<br>不是所有人都会心甘情愿地接受既定的命运......
+```
+
+---
+
+### 五、注意事项
+
+- **旁白不配音**：仅对 `角色名: 台词` 形式的对话添加 `@voice`
+- **配音角色**：仅对 15 个需要配音的角色添加（见 [02_role_name.mdc](./02_role_name.mdc) 中 Alisa、AnAn、Coco、Ema、Hanna、Hiro、Leia、Margo、Meruru、Miria、Nanoka、Noah、Sherry、Warden、Yuki 及前 13 个角色的魔女化形态，要注意 Warden 和 Yuki 是没有魔女化形态的）
+- **多剧本**：不同剧本使用不同的母文件夹名，路径互不冲突

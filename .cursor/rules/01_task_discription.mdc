@@ -26,6 +26,9 @@ alwaysApply: true
 - **仅可修改**：台词、对白、旁白文本
 - **严禁修改**：注释、`@char` 立绘指令、`@back` 背景指令、`@bgm` 等指令
 
+例外（配音接入任务）：
+- 当任务明确是“插入/调整配音”时，可按 [07_voice.mdc](./07_voice.mdc) 新增或调整 `@voice` 指令
+
 ---
 
 ## 三、换行规则
@@ -156,6 +159,7 @@ CharacterName: 台词内容
 | `@back` | 切换背景 |
 | `@bgm` / `@stopBgm` | 播放/停止 BGM |
 | `@sfx` | 播放音效 |
+| `@voice` | 播放角色配音 |
 | `@Gosub` | 调用子脚本 |
 
 ---
@@ -168,7 +172,8 @@ CharacterName: 台词内容
 | [03_BGM.mdc](./03_BGM.mdc) | BGM 调用语句 |
 | [04_SFX.mdc](./04_SFX.mdc) | 音效调用语句 |
 | [05_background.mdc](./05_background.mdc) | 背景调用语句 |
-| [06_Chinese_to_Japanese.mdc](./06_Chinese_to_Japanese.mdc) | （施工中） |
+| [06_Chinese_to_Japanese.mdc](./06_Chinese_to_Japanese.mdc) | 中译日：角色口癖与专有名词对照 |
+| [07_voice.mdc](./07_voice.mdc) | 角色配音 `@voice` 路径与插入规则 |
 
 ---
 
