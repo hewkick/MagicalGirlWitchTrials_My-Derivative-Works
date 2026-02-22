@@ -21,7 +21,10 @@
 | `03_BGM.mdc` | BGM 调用语句对照表 |
 | `04_SFX.mdc` | 音效调用语句对照表 |
 | `05_background.mdc` | 背景调用语句对照表 |
-| `06_Chinese_to_Japanese.mdc` | （施工中） |
+| `06_Chinese_to_Japanese.mdc` | 中译日翻译规则（角色口癖 + 专有名词 + 易错黑名单） |
+| `07_voice.mdc` | 角色配音接入规则（`@voice` 路径、CSV 生成、插入顺序） |
+
+---
 
 ---
 
