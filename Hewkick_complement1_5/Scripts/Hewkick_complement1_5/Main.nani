@@ -1,0 +1,1356 @@
+; 初始化日常活动状态
+@Gosub System/System_Subroutine.BeginAdv
+
+; 第零幕
+
+@ShowUI WitchBookButtonUI
+
+; 显示背景 26-1 冷冻室
+@back 26_1 Scale:{g_backgroundDefaultScale} !Lazy
+; 最上面的黑色遮罩层VerticalBlindGradually特效消失
+@back Transparent.Custom SubId:"Overlay" dissolve:"Diamonds15" tint:"#000000" time:0.99 !Lazy
+; 等待一小会到特效演完
+@Wait "0.9"
+
+@bgm "Bgm_23_1" volume:0.9
+
+@char Nanoka.ArmR1,OptionB_Off,ArmL4 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_001"
+Nanoka: 1-6-9-2-3-1，啊，果然打开了。
+;Hewkick_complement1_5_main_001
+;1-6-9-2-3-1……ああ、やっぱり開いたわ。
+
+@sfx "Sfx_62"
+@Wait "0.5"
+
+@char Nanoka.ArmR1,OptionB_Off,Surprised pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_002"
+Nanoka: 这是，我们的资料？
+;Hewkick_complement1_5_main_002
+;これは……私たちのファイル？
+
+@spawn "Clue" Params:5-7
+; @toast "魔女图鉴 更新…"
+
+@char Nanoka.ArmR1,OptionB_Off,Pensive,ArmL3 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_003"
+Nanoka: 嗯，整体格式跟姐姐那份是一样的，<br>不过没有注释。
+;Hewkick_complement1_5_main_003
+;ええ、全体的なフォーマットはお姉ちゃんのと同じね、ただ、コメントがないわ。
+@despawn "Clue"
+
+@voice "Hewkick_complement1_5_main_004"
+Nanoka: 樱羽艾玛、二阶堂希罗、泽渡可可......
+;Hewkick_complement1_5_main_004
+;桜羽エマ、二階堂ヒロ、沢渡ココ……
+
+@char Nanoka.ArmR1,OptionB_Off,Pensive,ArmL3,Eyes1_Normal_Closed1 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_005"
+Nanoka: （泽渡可可还是带着耳机更适合她一些。）
+;Hewkick_complement1_5_main_005
+;（沢渡ココはやっぱりヘッドフォンの方が似合うわね。）
+
+我看着泽渡可可的资料，暗自吐槽着。
+
+@voice "Hewkick_complement1_5_main_006"
+Unknown: 对不起......
+;Hewkick_complement1_5_main_006
+;ごめんなさい……
+
+@char Nanoka.Eyes1_Normal_Closed1,Surprised1,OptionB_Off,ArmR1,ArmL4 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_007"
+Nanoka: 谁？！
+;Hewkick_complement1_5_main_007
+;誰？！
+
+
+@stopBgm
+
+@sfx "Sfx_38" volume:1.0
+@hideChars !Lazy
+@ResetText
+@back SubId:"Overlay" SolidColor tint:"#000000" time:0.01 Lazy:false
+@Wait "3.0"
+@sfx "Sfx_38" volume:1.0
+@Wait "0.7"
+
+; 第一幕：交流
+@back 22_2 Scale:{g_backgroundDefaultScale} !Lazy
+@back Transparent.Custom SubId:"Overlay" dissolve:"VerticalBlindGradually" tint:"#000000" time:2.0 !Lazy
+@Wait "2.0"
+@bgm "Bgm_5_1" volume:1.2
+
+（扇动翅膀的声音传来。）
+
+@sfx "Sfx_8" volume:1.2
+
+@char Nanoka.OptionB_Body1,ArmL1,ArmR1,Angry pos:50,50 scale:1.0 !Lazy
+
+是典狱长。
+
+@char Nanoka.OptionB_Body1,ArmL1,ArmR1,Angry pos:-50,50 scale:1.0 time:0.5 !Lazy
+
+像往常一样，我窜进附近的树林之中。
+
+@hidechars !Lazy
+
+@voice "Hewkick_complement1_5_main_008"
+Nanoka: 呼，姐姐，我能感受到，<br>真相就在我触手可及的地方了。
+;Hewkick_complement1_5_main_008
+;ふぅ……お姉ちゃん、感じるわ、真相はもう私の手の届くところにあるってね。
+
+@voice "Hewkick_complement1_5_main_009"
+Nanoka: 等着我......!
+;Hewkick_complement1_5_main_009
+;待っていて……！
+
+@hide Nanoka !Lazy
+
+为了躲避搜查，我一直游走在这座岛上的各个地方。
+以往晚上还能睡在仓库之中，但自从橘雪莉袭击了我后，<br>典狱长就开始把仓库也当作重点巡查地点了。
+我不得不在野外探索更多可供我休息与隐蔽的地方。
+招待所后面的树林和杂草堆，勉强还可以吧。
+
+@char Nanoka.OptionB_Off,Surprised,ArmL2,ArmR1 pos:50,50 scale:1.0 !Lazy
+
+刚刚把枪支放到地上，一个人的声音就传了进来。
+
+@hide Nanoka !Lazy
+
+; 艾玛
+@voice "Hewkick_complement1_5_main_010" volume:0.6
+Ema: 哈啊...哈...哈... 
+;Hewkick_complement1_5_main_010
+;はあ……はあ……はあ……
+
+@char Nanoka.Surprised,OptionB_Off,Arms1 pos:50,50 scale:1.0 !Lazy
+
+@voice "Hewkick_complement1_5_main_011"
+Nanoka: （樱羽艾玛？！她为什么这么着急来这里？）
+;Hewkick_complement1_5_main_011
+;（桜羽エマ？！なぜそんなに急いでここへ来るの？）
+
+@hide Nanoka !Lazy
+透过杂草之间的缝隙，<br>我看到艾玛的身影消失在了水精之室中。
+
+@char Nanoka.Pensive,Arms1,OptionB_Off pos:50,50 scale:1.0 !Lazy
+
+@voice "Hewkick_complement1_5_main_012"
+Nanoka: （要不要跟上去？如果说？）
+;Hewkick_complement1_5_main_012
+;（後をつけようか？もしかして……？）
+
+这个念头很快就被打消了。
+
+@char Nanoka.Arms1,OptionB_Off,Pensive,Eyes1_Normal_Closed2 pos:50,50 scale:1.0 !Lazy
+
+@voice "Hewkick_complement1_5_main_013"
+Nanoka: （不行。樱羽艾玛那个样子，<br>绝对是有什么不得不立刻去做的事情。）
+;Hewkick_complement1_5_main_013
+;（いえ。桜羽エマのあの様子、絶対に今すぐやらなければならないことがあるはずだわ。）
+
+@voice "Hewkick_complement1_5_main_014"
+Nanoka: （行凶准备？她不像是会动手的那种人，<br>但魔女化后谁也说不好。）
+;Hewkick_complement1_5_main_014
+;（犯行準備？桜羽エマはそんなことをするような人には見えないけれど、魔女化した後は誰にも分からないわ。）
+
+@char Nanoka.Arms1,OptionB_Off pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_015"
+Nanoka: （况且，她是我唯一一个不知道魔法的人。<br>就连我的【幻视】魔法也没查到什么。<br>如果贸然靠近，很可能会莫名其妙地死在那里吧。）
+;Hewkick_complement1_5_main_015
+;（それに、桜羽エマだけは私の魔法を知らない唯一の人。私の【幻視】でも何も掴めなかった。迂闊に近づけば、訳も分からないまま死ぬことになるかもしれないわ。）
+
+@char Nanoka.Arms1,OptionB_Off,Angry pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_016"
+Nanoka: （如果她就是幕后黑手呢？）
+;Hewkick_complement1_5_main_016
+;（もし桜羽エマが黒幕だとしたら？）
+
+@char Nanoka.OptionB_Off,Arms1,Pensive pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_017"
+Nanoka: （远野汉娜一案后，泽渡可可经常会偷偷来招待所补觉，<br>为了避免被她发现，我很少出入招待所。）
+;Hewkick_complement1_5_main_017
+;（遠野ハンナの件以来、沢渡ココはよく招待所にこっそり仮眠を取りに来るようになった。その人に見つかるのを避けるために、私は招待所にほとんど出入りしなくなったわ。）
+
+@char Nanoka.Arms1,OptionB_Off,Pensive,Eyes1_Normal_Closed2 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_018"
+Nanoka: （那么，樱羽艾玛若是在水精之室里藏了东西，<br>我也很难有机会靠【幻视】发现。）
+;Hewkick_complement1_5_main_018
+;（だとすれば、桜羽エマが水精の間に何かを隠していたとしても、【幻視】で発見する機会はほとんどないわね。）
+
+@char Nanoka.OptionB_Off,Arms1,Pensive pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_019"
+Nanoka: （但是，我还是想不通她为何如此着急...？） 
+;Hewkick_complement1_5_main_019
+;（でも……なぜあんなに急いでいたのか、やっぱり分からないわ……。）
+
+@hidechars !Lazy
+@ResetText
+
+@back SubId:"Overlay" SolidColor tint:"#000000" time:0.7 Lazy:false
+@Wait "0.7"
+@back 22_2 Scale:{g_backgroundDefaultScale} !Lazy
+@back Transparent.Custom SubId:"Overlay" dissolve:"VerticalBlindGradually" tint:"#000000" time:0.99 !Lazy
+@Wait "0.9"
+@Wait "1.0"
+
+@char Nanoka.OptionB_Body1,Surprised,ArmL3,ArmR1 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_020"
+Nanoka: （为什么？樱羽艾玛还不出来？）
+;Hewkick_complement1_5_main_020
+;（なぜ？桜羽エマはまだ出てこないの？）
+
+@char Nanoka.OptionB_Body1,Angry,ArmL4,ArmR1 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_021"
+Nanoka: （那么一个小房间？水精之室里有什么？）
+;Hewkick_complement1_5_main_021
+;（あんな小さな部屋なのに？水精の間に何があるというの？）
+
+@ResetText
+
+@sfx "Sfx_22" volume:0.7
+@hide Nanoka !Lazy
+@char Ema.ArmR1,ArmL1,Pensive pos:50,50 scale:1.0 !Lazy
+@Wait "1.5"
+@char Ema.ArmR1,ArmL1,Pensive pos:130,50 scale:1.0 time:1.0 !Lazy
+@hide Ema !Lazy
+@char Nanoka.Normal1,ArmR3,ArmL10 pos:50,50 scale:1.0 !Lazy
+
+@voice "Hewkick_complement1_5_main_022"
+Nanoka: （那个表情...<br>她刚才一定是经历了什么事情。）
+;Hewkick_complement1_5_main_022
+;（あの表情……桜羽エマはさっき、きっと何かを経験したのだわ。）
+
+@char Nanoka.Normal1,ArmR3,ArmL10,Eyes1_Normal_Closed2 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_023"
+Nanoka: （她明天可能还会再来这里。）
+;Hewkick_complement1_5_main_023
+;（明日もまたここに来るかもしれないわね。）
+
+@sfx "Sfx_8"
+典狱长扇动翅膀的声音又一次不合时宜地响了起来。
+
+@char Nanoka.Angry,ArmL1,ArmR1 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_024"
+Nanoka: （嘁，今天只好先离开这里了，本想着在附近盯梢的！）
+;Hewkick_complement1_5_main_024
+;（ちっ、今日はここを離れるしかないわね。近くで張り込もうと思っていたのに！）
+
+@char Nanoka.Angry,ArmL1,ArmR1 pos:-20,50 scale:1.0 time:0.5 !Lazy
+借着夜色，<br>我让自己的身影迅速融化在森林深处，静候黎明的到来。
+
+@hidechars !Lazy
+
+@back 22_1 Scale:{g_backgroundDefaultScale} !Lazy
+@back Transparent.Custom SubId:"Overlay" dissolve:"VerticalBlindGradually" tint:"#000000" time:1.0 !Lazy
+@Wait "1.0"
+
+@char Ema.ArmR1,ArmL1,Default pos:70,50 scale:1.0 !Lazy
+第二天早上，樱羽艾玛果然出现了。
+
+@char Nanoka.ArmL1,ArmR1,Normal1 pos:-50,50 scale:1.0 !Lazy
+@char Ema.ArmR1,ArmL1,Surprised pos:70,50 scale:1.0 !Lazy
+@char Nanoka.ArmL1,ArmR1,Normal1 pos:30,50 scale:1.0 time:0.5 !Lazy
+虽然看起来有些迟疑，<br>但她还是告诉了我水精之室下方的密室。
+@char Ema.ArmR1,ArmL1,Pensive pos:70,50 scale:1.0 !Lazy
+@char Nanoka.ArmL1,ArmR1,Normal1 pos:30,50 scale:1.0 !Lazy
+@char Ema.ArmL1,Smile,ArmR8 pos:70,50 scale:1.0 !Lazy
+@char Nanoka.ArmR1,Normal1,ArmL4 pos:30,50 scale:1.0 !Lazy
+作为【交易】，我选择相信她，<br>并让她帮我把风。
+@hideChars !Lazy
+@back 31_1 Scale:{g_backgroundDefaultScale} !Lazy
+@back Transparent.Custom SubId:"Overlay" dissolve:"VerticalBlindGradually" tint:"#000000" time:0.7 !Lazy
+@Wait "0.7"
+
+@stopBgm fade:2.0
+
+@char Nanoka.ArmL1,ArmR1,Normal1,Eyes1_Normal_Closed2 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_025"
+Nanoka: （是的。<br>这不是【保护】，这是【交易】。）
+;Hewkick_complement1_5_main_025
+;（そう。これは「保護」ではない。「取引」だ）
+
+@hidechars !Lazy
+@ResetText
+
+; 第二幕：探索
+@back 25_1 Scale:{g_backgroundDefaultScale} !Lazy
+@back Transparent.Custom SubId:"Overlay" dissolve:"VerticalBlindGradually" tint:"#000000" time:0.7 !Lazy
+@Wait "0.7"
+
+@bgm "Bgm_26_1" volume:1.4
+
+从电梯下去，我按照樱羽艾玛所说，<br>拿东西抵住了入口的门。
+刺骨的冷空气弥漫在房间之中，<br>从上到下侵占了我的每一寸皮肤，<br>但也迫使我因混乱而过热的大脑冷静了下来。
+若是细细观察，<br>会发现这里的空间跟岛上的任何一处都不一样。
+
+@hide Nanoka !Lazy
+我随意翻看着架子上的资料，<br>而其中一份引起了我的注意——
+
+; （可以尝试触发搜查线索）
+@spawn "Clue" Params:5-7
+@char Nanoka.OptionB_Body1,ArmL4,ArmR1,Surprised pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_027"
+Nanoka: 我的名字？
+;Hewkick_complement1_5_main_027
+;私の名前？
+
+@voice "Hewkick_complement1_5_main_028"
+Nanoka: 【重点监视对象】【越狱？】【危险】。
+;Hewkick_complement1_5_main_028
+;【重点監視対象】【脱獄？】【危険】。
+
+@char Nanoka.OptionB_Body1,ArmR1,ArmL3 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_029"
+Nanoka: 15 岁......
+;Hewkick_complement1_5_main_029
+;15歳……
+@despawn "Clue"
+
+@char Nanoka.OptionB_Body1,ArmR1,ArmL3,Eyes1_Normal_Closed2 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_030"
+Nanoka: 我明白了，<br>至少在幕后黑手抓我进来的时候，<br>还没有理清我和姐姐的区别。
+;Hewkick_complement1_5_main_030
+;分かったわ。少なくとも黒幕が私を連れ込んだ時点では、私とお姉ちゃんの区別がついていなかったのね。
+
+@char Nanoka.OptionB_Body1,ArmL3,Angry,ArmR1 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_031"
+Nanoka: 但是，为什么这次的看守用的是...？
+;Hewkick_complement1_5_main_031
+;でも、なぜ今回の看守は……？
+
+我的大脑又一次混乱起来。
+
+@char Nanoka.OptionB_Body1,ArmL3,Angry,ArmR5 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_032"
+Nanoka: （可恶，为什么偏偏这种时刻【幻視】不发动！）
+;Hewkick_complement1_5_main_032
+;（くっ、なぜこんな時に限って【幻視】が発動しないの！）
+@hide Nanoka !Lazy
+
+感到四周的寒冷正吞噬着我的体温，<br>我来不及深入思考，只得继续搜寻下去。
+
+@char Nanoka.OptionB_Body1,ArmL3,ArmR1,Surprised pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_033"
+Nanoka: 一个控制面板？
+;Hewkick_complement1_5_main_033
+;操作盤？
+
+; （可以尝试触发搜查线索）
+@spawn "Clue" Params:4-7
+
+@char Nanoka.OptionB_Body1,ArmL3,ArmR1,Pensive pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_034"
+Nanoka: （我记得艾玛说她不小心把控制面板摔坏了，<br>所以叫我一定要拿东西挡住门。）
+;Hewkick_complement1_5_main_034
+;（桜羽エマが操作盤を誤って壊してしまったから、必ずドアを何かで押さえておくようにって言っていたわね。）
+
+@voice "Hewkick_complement1_5_main_035"
+Nanoka: （但为什么它会完好无损地在这里？）
+;Hewkick_complement1_5_main_035
+;（でも、なぜ無傷のままここにあるの？）
+
+@despawn "Clue"
+
+@voice "Hewkick_complement1_5_main_036"
+@char Nanoka.OptionB_Body1,Angry,ArmR1,ArmL1 pos:50,50 scale:1.0 !Lazy
+Nanoka: （樱羽艾玛在骗我？或是有其他人来过？）
+;Hewkick_complement1_5_main_036
+;（桜羽エマが私を騙したの？それとも他に誰かが来たの？）
+
+@char Nanoka.OptionB_Body1,Angry,ArmL1,ArmR3 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_037"
+Nanoka: （糟了！如果是幕后黑手来过，<br>发现控制面板损坏并进行了更换的话...）
+;Hewkick_complement1_5_main_037
+;（まずい！もし黒幕がここに来て、操作盤の損傷に気づいて交換したとしたら……）
+
+@voice "Hewkick_complement1_5_main_038"
+Nanoka: （...必须赶在她之前行动！）
+;Hewkick_complement1_5_main_038
+;（……先を越される前に動かなければ！）
+@hidechars
+
+又一次环视四周，一扇紧闭着的门映入眼帘。
+
+@char Nanoka.OptionB_Body1,Eyes1_Normal_Closed1,ArmR1,ArmL4 pos:50,50 scale:1.0 !Lazy
+我将左手放在上面，试图碰运气发动【幻视】。
+
+@char Nanoka.OptionB_Body1,Eyes1_Normal_Closed1,ArmR1,ArmL1,Angry pos:50,50 scale:1.0 !Lazy
+但未曾设想过的低温让我猛地一颤，条件反射地将手抽了回来。
+
+@char Nanoka.OptionB_Body1,Eyes1_Normal_Closed1,Angry,ArmR5,ArmL1 pos:50,50 scale:1.0 !Lazy
+
+不过好在，【幻视】发动了——<br>尽管我这次只能获取到一些模糊的信息。
+
+@voice "Hewkick_complement1_5_main_039"
+Nanoka: 有人，或者说大概率是幕后黑手，<br>曾用正常手段出入过门。
+;Hewkick_complement1_5_main_039
+;誰かが——おそらく黒幕が——正規の手段でこのドアを出入りしていたわ。
+
+@char Nanoka.OptionB_Body1,Angry,ArmR5,ArmL1,Eyes1_Normal_Closed1 pos:50,50 scale:1.0 !Lazy
+
+并且，门那边要比这里冷得多。
+;それに、ドアの向こうはここよりずっと寒いわ。
+
+@hide Nanoka !Lazy
+@back id:MainBackground pos:85,30 scale:2.0 time:0.6 easing:"SmoothStep" !Lazy
+@char Nanoka.OptionB_Body1,Eyes1_Normal_Closed1,ArmL3,ArmR1 pos:50,50 scale:1.0 !Lazy
+
+@voice "Hewkick_complement1_5_main_040"
+Nanoka: （那个通风管道，应该能让我出入。）
+;Hewkick_complement1_5_main_041
+;（あの通気管なら、出入りできるはずよ。）
+
+@char Nanoka.OptionB_Body1,ArmL3,ArmR1 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_042"
+Nanoka: 尽管这样子一定会暴露自己，<br>但是...时间紧迫，没办法了！
+;Hewkick_complement1_5_main_042
+;こうすれば必ず自分の存在がバレるけど……時間がない、仕方ないわ！
+
+@hidechars !Lazy
+@sfx "Sfx_38" volume:0.8
+@back SubId:"Overlay" SolidColor tint:"#000000" time:0.8 Lazy:false
+@Wait "0.8"
+@sfx "Sfx_79" volume:1.2
+
+在漆黑逼仄的通风管道中，<br>我不得不将枪械抛下，<br>蜷缩着身体，一点点向前挪动。
+
+; 第三幕：真相
+; （一个 AI 生成的密码箱闭合冷冻室背景）
+@back box_closed_AI pos:50,50 Scale:{g_backgroundDefaultScale} time:0 lazy:false
+@back Transparent.Custom SubId:"Overlay" dissolve:"VerticalBlindGradually" tint:"#000000" time:0.99 !Lazy
+@Wait "0.9"
+@sfx "Sfx_10"
+@char Nanoka.ArmR1,ArmL1,Eyes1_Normal_Closed1,OptionB_Off pos:50,50 scale:1.0 !Lazy
+
+@voice "Hewkick_complement1_5_main_043"
+Nanoka: 呼，终于过来了。<br>看来这里就是整个地下空间的冷源了。
+;Hewkick_complement1_5_main_043
+;ふぅ、ようやく来られたわ。ここが地下空間全体の冷却源なのね。
+
+@char Nanoka.OptionB_Off,ArmR1,ArmL11 pos:50,50 scale:1.0 !Lazy
+在手机手电筒的帮助下，我探索着这片空间。
+@hide Nanoka !Lazy
+
+@back id:MainBackground pos:70,60 scale:1.9 time:0.8 easing:"SmoothStep" !Lazy
+
+但最让我在意的，还是桌子上的那个密码箱。
+
+用手轻轻扫过，【幻视】正合时宜地发动了。
+
+@back id:MainBackground pos:50,50 scale:1.0 time:0.8 easing:"SmoothStep" !Lazy
+@char Nanoka.OptionB_Off,ArmL3,ArmR5,Angry,Eyes1_Angry_Closed1 pos:50,50 scale:1.0 !Lazy
+
+@voice "Hewkick_complement1_5_main_044"
+Nanoka: （可恶，就连【幻视】看到的场景也是漆黑一片，<br>根本看不清开锁人...!）
+;Hewkick_complement1_5_main_044
+;（くっ、【幻視】で見えた場面まで真っ暗で、錠を開けた人物が全然分からないわ……！）
+
+@hide Nanoka !Lazy
+我只好先拿出纸笔，将已有的信息记录下来。
+随后，尝试打开密码箱——
+
+@back 26_1 Scale:{g_backgroundDefaultScale} !Lazy
+@char Nanoka.ArmR1,OptionB_Off,ArmL4 pos:50,50 scale:1.0 !Lazy
+
+@voice "Hewkick_complement1_5_main_045"
+Nanoka: 1-6-9-2-3-1，啊，果然打开了。
+;Hewkick_complement1_5_main_045
+;1-6-9-2-3-1……ああ、やっぱり開いたわ。
+
+@sfx "Sfx_62"
+@Wait "0.5"
+@char Nanoka.ArmR1,OptionB_Off,Surprised pos:50,50 scale:1.0 !Lazy
+
+@voice "Hewkick_complement1_5_main_046"
+Nanoka: 这是，我们的资料？
+;Hewkick_complement1_5_main_046
+;これは……私たちのファイル？
+
+@spawn "Clue" Params:5-7
+; @toast "魔女图鉴 更新…"
+
+@char Nanoka.ArmR1,OptionB_Off,Pensive,ArmL3 pos:50,50 scale:1.0 !Lazy
+
+@voice "Hewkick_complement1_5_main_047"
+Nanoka: 嗯，整体格式跟姐姐那份是一样的，<br>不过没有注释。
+;Hewkick_complement1_5_main_047
+;ええ、全体的なフォーマットはお姉ちゃんのと同じね、ただ、コメントがないわ。
+
+@despawn "Clue"
+
+@voice "Hewkick_complement1_5_main_048"
+Nanoka: 樱羽艾玛、二阶堂希罗、泽渡可可......
+;Hewkick_complement1_5_main_048
+;桜羽エマ、二階堂ヒロ、沢渡ココ……
+
+@char Nanoka.ArmR1,OptionB_Off,Pensive,ArmL3,Eyes1_Normal_Closed1 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_049"
+Nanoka: （泽渡可可还是带着耳机更适合她一些。）
+;Hewkick_complement1_5_main_049
+;（沢渡ココはやっぱりヘッドフォンの方が似合うわね。）
+
+我看着泽渡可可的资料，暗自吐槽着。
+
+@voice "Hewkick_complement1_5_main_050"
+Unknown: 对不起......
+;Hewkick_complement1_5_main_050
+;ごめんなさい……
+
+@char Nanoka.Eyes1_Normal_Closed1,Surprised1,OptionB_Off,ArmR1,ArmL4 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_051"
+Nanoka: 谁？！
+;Hewkick_complement1_5_main_051
+;誰？！
+
+@back id:MainBackground pos:53,50 scale:1.15 time:0.04 easing:"Linear" !Lazy
+@back id:MainBackground pos:47,50 scale:1.15 time:0.04 easing:"Linear" !Lazy
+@back id:MainBackground pos:50,53 scale:1.15 time:0.04 easing:"Linear" !Lazy
+@back id:MainBackground pos:50,47 scale:1.15 time:0.04 easing:"Linear" !Lazy
+@back id:MainBackground pos:53,50 scale:1.15 time:0.04 easing:"Linear" !Lazy
+@back id:MainBackground pos:47,50 scale:1.15 time:0.04 easing:"Linear" !Lazy
+@back id:MainBackground pos:50,53 scale:1.15 time:0.04 easing:"Linear" !Lazy
+@back id:MainBackground pos:50,47 scale:1.15 time:0.04 easing:"Linear" !Lazy
+@back id:MainBackground pos:50,50 scale:1.15 time:0.04 easing:"Linear" !Lazy
+
+@stopBgm
+@char Nanoka.OptionB_Off,ArmR1,ArmL4,Fearful pos:50,50 scale:1.0 !Lazy
+@sfx "Sfx_38" volume:1.0 
+
+@ResetText
+
+@char Nanoka.OptionB_Off,ArmR1,ArmL4,Fearful pos:50,25 scale:1.0 time:0.5 !Lazy
+@Wait "3.0"
+@hide Nanoka !Lazy
+@sfx "Sfx_38" volume:1.0 
+@back SubId:"Overlay" SolidColor tint:"#000000" time:0.01 Lazy:false
+@Wait "0.01"
+@sfx "Sfx_10"
+
+来不及反应，我的身体就已砸向地面。
+瞬间，一股剧烈的灼烧感从腹腔涌了上来，<br>伴着刺鼻的铁锈味，充斥在我的口腔与鼻腔内。
+而痛苦隔了几秒才姗姗来迟。<br>从未有过的绞痛蚕食着我的身体，撕裂着我的五脏六腑。
+挣扎着想要看清向我走来的人，<br>但眼前只有成群的血色蝴蝶从腹部飞出，散开，<br>融化在漆黑的房间之中。
+【要死了】，【姐姐...】。<br>这样想着，意识渐渐沉入黑暗之中。
+
+@ResetText
+
+; 第三幕：真相
+@back 13_1 Scale:{g_backgroundDefaultScale} !Lazy
+@back Transparent.Custom SubId:"Overlay" dissolve:"VerticalBlindGradually" tint:"#000000" time:0.99 !Lazy
+@Wait "2.0"
+@bgm "Bgm_43_1" volume:1.2
+
+@voice "Hewkick_complement1_5_main_052"
+@char Coco.Angry,ArmL3,ArmR2 pos:50,50 scale:1.0 !Lazy
+Coco: 艾玛亲果然是凶手啊！<br>还在这里玩什么愚蠢的过家家游戏！<br>真是令人作呕！！
+;Hewkick_complement1_5_main_052
+;エマっちはやっぱり犯人じゃん！こんなとこでくだらないままごとしてんじゃないよ！マジキモっ！！
+
+@hide Coco !Lazy
+@voice "Hewkick_complement1_5_main_053"
+@char Margo.Angry,ArmL3,ArmR1 pos:50,50 scale:1.0 !Lazy
+Margo: 是啊，先是害死了亚里沙，<br>后又将奈叶香冻死在地下...
+;Hewkick_complement1_5_main_053
+;そう、まずアリサちゃんを死なせて、次はナノカちゃんを地下で凍死させるなんて……
+
+@hide Margo !Lazy
+
+@voice "Hewkick_complement1_5_main_054"
+@char Ema.ArmR1,ArmL1,Fearful pos:50,50 scale:1.0 !Lazy
+Ema: 不是的！凶手真的不是我啊！<br>喂，梅露露，你相信我吧！
+;Hewkick_complement1_5_main_054
+;違う！ボクは犯人じゃないよ！ねえ、メルルちゃん、キミはボクを信じてくれるよね！
+
+@hide Ema !Lazy
+@char Meruru.ArmR1_1,ArmL1,Normal1,Eyes1_Angry_Closed1 pos:50,50 scale:1.0 !Lazy
+
+@voice "Hewkick_complement1_5_main_055"
+Meruru: 艾玛小姐，虽然我也不相信...
+;Hewkick_complement1_5_main_055
+;エマさん、私も信じたくはないのですが……
+
+@char Meruru.ArmR1_1,ArmL1,Smile pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_056"
+Meruru: 但是，做错了事情就要接受惩罚哦？
+;Hewkick_complement1_5_main_056
+;でも、悪いことをしたら罰を受けなければなりませんよね？
+
+@hide Meruru !Lazy
+
+@voice "Hewkick_complement1_5_main_057"
+Nanoka: （这里是，审判庭？）
+;Hewkick_complement1_5_main_057
+;（ここは、裁判所？）
+
+@char Nanoka.ArmR1,OptionB_Off,Surprised,ArmL3 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_058"
+Nanoka: （我，被樱羽艾玛杀死了？）
+;Hewkick_complement1_5_main_058
+;（私、桜羽エマに殺されたの？）
+
+我不可置信地环视着审判庭，<br>大家似乎完全注意不到我的【存在】。
+
+; nnk nnk nnk nnk nnk nnk 
+@char Nanoka.OptionB_Off,ArmL1,ArmR5,Angry pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_059"
+Nanoka: （啊，现在是处于【幻视】之中吗...）
+;Hewkick_complement1_5_main_059
+;（あ、今は【幻視】の中にいるのかしら……）
+
+@char Nanoka.OptionB_Off,Surprised,ArmL4,ArmR5 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_060"
+Nanoka: （审判庭中央的那是...？！）
+;Hewkick_complement1_5_main_060
+;（裁判所の中央にいるのは……？！）
+
+@hide Nanoka !Lazy
+是的，那是【我】。
+
+; 切换 nnk 死亡 CG，但是用 AI 修改的无血迹版
+@back nnk_no_blood_CG_AI Scale:{g_backgroundDefaultScale} !Lazy
+完整地躺在十字架之上，身上没有任何的伤口。<br>就连本应出现的血色蝴蝶，也在此刻不见了踪影。
+
+@voice "Hewkick_complement1_5_main_062"
+Nanoka: （不对！我刚才应该是，【中枪】了！）
+;Hewkick_complement1_5_main_062
+;（違う！さっき私は、【銃で撃たれた】はずよ！）
+
+@voice "Hewkick_complement1_5_main_063"
+Nanoka: （如果这是我用【幻视】看到的【未来】...<br>...为什么，我的身上没有血迹与伤口？）
+;Hewkick_complement1_5_main_063
+;（もしこれが私の【幻視】で見た【未来】だとしたら……なぜ、私の体に血も傷もないの？）
+
+@back 13_1 Scale:{g_backgroundDefaultScale} !Lazy
+@char Ema.ArmR1,ArmL1,Fearful pos:50,50 scale:1.0 !Lazy
+
+@voice "Hewkick_complement1_5_main_064"
+Ema: 不要！我不要死！奈叶香不是我杀的！
+;Hewkick_complement1_5_main_064
+;嫌だ！ボクは死にたくない！ナノカちゃんを殺したのはボクじゃない！
+
+@char Ema.ArmR1,ArmL1,Fearful pos:-50,50 scale:1.0 time:0.5 !Lazy
+艾玛崩溃着向门口跑去——
+
+随即，看守挥下镰刀——
+
+@hide Ema !Lazy
+@sfx "Sfx_12"
+@back SubId:"Overlay" SolidColor tint:"#FF0000" time:0.5 Lazy:false
+@Wait "0.5"
+
+@stopBgm
+
+@wait "2.5"
+
+@back SubId:"Overlay" SolidColor tint:"#000000" time:0.5 Lazy:false
+@bgm "Bgm_23_1" volume:1.4 fade:3.0
+
+@voice "Hewkick_complement1_5_main_065"
+Nanoka: （啊！又换地方了！这里是...哪里？）
+;Hewkick_complement1_5_main_065
+;（あ！また場所が変わった！ここは……どこ？）
+
+还没从刚刚看到的场景中回过神来，<br>我发现自己正身处一个新的空间之内。
+四周摆放着的书架，和整体的空间布局都在提醒我，<br>这里是图书馆。但整体氛围却跟我记忆里<br>那个压抑的图书馆完全不同。
+而最让我惊讶的，还是我面前的——
+
+; 月代雪 + 梅露露读书 CG
+@back 160_1 Id:"Stills" Scale:{g_backgroundDefaultScale} !Lazy
+@back Transparent.Custom SubId:"Overlay" dissolve:"VerticalBlindGradually" tint:"#000000" time:0.99 !Lazy
+@Wait "0.9"
+
+@voice "Hewkick_complement1_5_main_066"
+Nanoka: 冰上...梅露露？？？典狱长？？？<br>还有那个白发少女，是谁？？？
+;Hewkick_complement1_5_main_066
+;氷上……メルル？？？ゴクチョー？？？それにあの白髪の少女は、誰？？？
+
+似乎是想起了什么，那个白发少女放下了书本。
+
+@voice "Hewkick_complement1_5_main_067"
+Unknown: 梅露露，可以麻烦你去地下一层拿一下我的手记吗？<br>我昨天好像不小心落在那里了。
+;Hewkick_complement1_5_main_067
+;メルル、地下一階に私の手記を取りに行ってもらえる？昨日うっかり置いてきてしまったみたいで。
+
+@voice "Hewkick_complement1_5_main_068" volume:1.3
+Meruru: 好呀！大魔女大人，我这就去拿！
+;Hewkick_complement1_5_main_068
+;はい！大魔女様、すぐ取ってきます！
+
+随后，梅露露跟那只典狱长一同走出了图书馆的门。
+
+大魔女...大人？冰上梅露露？这到底是...？
+
+@hideChars !Lazy
+@voice "Hewkick_complement1_5_main_070"
+Unknown: 黑部奈叶香...你在这里吧？
+;Hewkick_complement1_5_main_070
+;黒部ナノカ……そこにいるでしょう？
+
+;在这里转成纯黑背景，但不遮挡人物
+
+@back all_black_background Id:"Stills" Scale:{g_backgroundDefaultScale} !Lazy
+
+@char Nanoka.OptionB_Off,ArmL1,ArmR1,Surprised,Sweat1_1 pos:50,50 scale:1.0 !Lazy
+
+@voice "Hewkick_complement1_5_main_071"
+Nanoka: ？？？？！！！！
+;Hewkick_complement1_5_main_071
+;あ？！
+
+@voice "Hewkick_complement1_5_main_072"
+Unknown: 不用担心，我看不到你，也没有办法伤害你。<br>实际上，我只是【预测】到了你会出现在这里。
+;Hewkick_complement1_5_main_072
+;心配しないで。私にはあなたが見えないし、傷つけることもできない。実際、ただあなたがここに現れると【予測】しただけよ。
+
+@hide Nanoka !Lazy
+
+@char Yuki.12
+@voice "Hewkick_complement1_5_main_073"
+Unknown: 毕竟，我可是【大魔女】呢。
+;Hewkick_complement1_5_main_073
+;だって、私は【大魔女】なのだから。
+
+@char Yuki.8
+@voice "Hewkick_complement1_5_main_074"
+Unknown: 你们人类靠【魔女因子】施展的这点魔法，<br>我可是轻轻松松就能探测到呢。
+;Hewkick_complement1_5_main_074
+;あなたたち人間が【魔女因子】で使うこの程度の魔法なら、私には簡単に感知できるわ。
+
+@char Yuki.9
+@voice "Hewkick_complement1_5_main_075"
+Unknown: 不过，我也是被吓了一跳呢。
+;Hewkick_complement1_5_main_075
+;でも、私も少し驚いたわ。
+
+@voice "Hewkick_complement1_5_main_076"
+Unknown: 一般来说，你应该只能【幻视】到我存在过的这个【事实】，<br>而看不清我的具体样貌。
+;Hewkick_complement1_5_main_076
+;普通なら、あなたには私が存在したという【事実】しか【幻視】できないはず。私の具体的な姿まで見えるはずはないのに。
+
+@char Yuki.10
+@voice "Hewkick_complement1_5_main_077"
+Unknown: 但如今，你居然能【幻视】到我的具体样貌，并让我感知到。<br>这就只能说明有两件事情同时发生了——
+;Hewkick_complement1_5_main_077
+;なのに今、あなたは私の具体的な姿を【幻視】して、私に感知させた。これはつまり、二つのことが同時に起きたということよ——
+
+@char Yuki.11
+@voice "Hewkick_complement1_5_main_078"
+Unknown: 你的魔女化程度在一瞬间加深了很多，<br>同时，你触碰到了梅露露或者跟【我】强相关的物品。
+;Hewkick_complement1_5_main_078
+;あなたの魔女化が一瞬で大きく進んだこと、そして同時に、メルルか【私】と強く結びついた物に触れたということ。
+
+@voice "Hewkick_complement1_5_main_079"
+Unknown: 我说的，没错吧？
+;Hewkick_complement1_5_main_079
+;私の言っていること、間違いないでしょう？
+
+@hide Yuki !Lazy
+@char Nanoka.OptionB_Off,ArmR1,ArmL3 pos:50,50 scale:1.0 !Lazy
+Nanoka: ......
+
+不知道该如何回复，我只好沉默。
+
+@voice "Hewkick_complement1_5_main_081"
+Unknown: 沉默，也没用哦？
+;Hewkick_complement1_5_main_081
+;黙っていても、無駄よ？
+
+@char Nanoka.OptionB_Off,ArmL3,Angry,Sweat1_1,ArmR1 pos:50,50 scale:1.0 !Lazy
+
+？！！！！
+
+@voice "Hewkick_complement1_5_main_083"
+Unknown: 我相信你在之前已经【幻视】到了一些，<br>有关这座岛的过去了吧。
+;Hewkick_complement1_5_main_083
+;あなたはすでに【幻視】で、この島の過去について何かを見ているはずよ。
+
+@hide Nanoka !Lazy
+
+@char Yuki.8
+@voice "Hewkick_complement1_5_main_084"
+Unknown: 目前，这座岛上，除了那些猫头鹰外，<br>就只有我和梅露露了呢。
+;Hewkick_complement1_5_main_084
+;今のところ、この島にはあのフクロウたちを除けば、私とメルルしかいないわ。
+
+@char Yuki.4
+@voice "Hewkick_complement1_5_main_085"
+Unknown: 虽然由于样本稀缺，<br>目前的我还无法把人类魔女化的诱因研究透彻。
+;Hewkick_complement1_5_main_085
+;サンプルが少ないせいで、今の私には人間の魔女化の原因をまだ完全には解明できていないけれど。
+
+@voice "Hewkick_complement1_5_main_086"
+Unknown: 但我想，现在的你，<br>一定是受到了严重的冲击，才会这样的吧？
+;Hewkick_complement1_5_main_086
+;今のあなたは、きっと深刻な衝撃を受けたからこうなったのでしょう？
+
+@char Yuki.10
+@voice "Hewkick_complement1_5_main_087"
+Unknown: 你，【你们】，和梅露露，<br>不过都是必将到来的结局前的牺牲品罢了。
+;Hewkick_complement1_5_main_087
+;あなたも、【あなたたち】も、そしてメルルも——みんな、必ず訪れる結末の前の犠牲に過ぎないわ。
+
+@char Yuki.12
+@voice "Hewkick_complement1_5_main_088"
+Unknown: 因为人类，早晚有一天，全都会死的哦？
+;Hewkick_complement1_5_main_088
+;だって人間は、いつかみんな死ぬのだから。
+
+@voice "Hewkick_complement1_5_main_089"
+Meruru: 大魔女大人，我没有找到呀！
+;Hewkick_complement1_5_main_089
+;大魔女様、見つかりませんでした！
+
+@char Yuki.9
+@voice "Hewkick_complement1_5_main_090"
+Unknown: 啊，看来交流的时间转瞬即逝呢。
+;Hewkick_complement1_5_main_090
+;あら、交流の時間はあっという間ね。
+
+@char Yuki.15
+@voice "Hewkick_complement1_5_main_091"
+Unknown: 不过谢谢你，黑部奈叶香，<br>你让我短暂地看到了那个【未来】。
+;Hewkick_complement1_5_main_091
+;でも、ありがとう、黒部ナノカ。あなたのおかげで、あの【未来】を一瞬だけ見ることができたわ。
+
+@hide Yuki !Lazy
+@voice "Hewkick_complement1_5_main_092"
+Unknown: 现在，<color=#bfe6ff><b>【回去吧】</b></color>！
+;Hewkick_complement1_5_main_092
+;今すぐ、【戻りなさい】！
+
+@back SubId:"Overlay" SolidColor tint:"#FFFFFF" time:0.5 Lazy:false
+@Wait "0.5"
+@Wait "1.0"
+@back SubId:"Overlay" SolidColor tint:"#000000" time:0.5 Lazy:false
+
+@stopBGM
+@hide Stills !Lazy
+
+; 回到 26_1 冷冻室，梅露露唤醒奈叶香
+@back 26_1 Scale:{g_backgroundDefaultScale} !Lazy
+@back Transparent.Custom SubId:"Overlay" dissolve:"VerticalBlindGradually" tint:"#000000" time:0.99 !Lazy
+@Wait "1.0"
+@bgm "Bgm_20_1" volume:1.6
+
+@voice "Hewkick_complement1_5_main_093"
+Meruru: 奈叶香小姐，奈叶香小姐！你没事吧！
+;Hewkick_complement1_5_main_093
+;ナノカさん、ナノカさん！大丈夫ですか！
+
+我看到冰上梅露露的双手正放在我的腹上。
+
+@voice "Hewkick_complement1_5_main_095"
+Nanoka: 冰上梅露露！是你！我的枪...！
+;Hewkick_complement1_5_main_095
+;氷上メルル！あなただったの！私の銃は……！
+
+; 奈叶香立绘先上升，后又下降
+@char Nanoka.OptionB_Off,Angry,Sweat1_1,ArmR1,ArmL1 pos:50,25 scale:1.0 time:0.4 !Lazy
+@Wait "0.4"
+@char Nanoka.OptionB_Off,Angry,Sweat1_1,ArmR1,ArmL1 pos:50,55 scale:1.0 time:0.3 !Lazy
+
+本想一拳挥到冰上梅露露的身上，<br>但刚刚起身，腹腔却传来巨大的撕裂感，<br>我又一次摔向地面。
+
+@Wait "0.3"
+@char Nanoka.OptionB_Off,Angry,Sweat1_1,ArmR1,ArmL1 pos:50,-30 scale:1.0 time:0.3 !Lazy
+@Wait "0.3"
+@hide Nanoka !Lazy
+@char Meruru.ArmR1_1,ArmL1,Smile1 pos:50,50 scale:1.0 !Lazy
+
+@sfx "Sfx_10"
+
+@voice "Hewkick_complement1_5_main_096"
+Meruru: 奈叶香小姐不要动哦？<br>只要我现在停止治疗魔法，你很快就会死去的。<br>你不想，再见到你的姐姐了吗？
+;Hewkick_complement1_5_main_096
+;ナノカさん、動かないでくださいね？今すぐ治療魔法を止めれば、あなたはすぐ死んでしまいますよ。お姉さんにもう一度会いたくないですか？
+
+Nanoka: ？？？！！！！
+
+@voice "Hewkick_complement1_5_main_098"
+Nanoka: 冰上梅露露！你早就知道！！！
+;Hewkick_complement1_5_main_098
+;氷上メルル！あなたはずっと知っていたのね！！！
+
+@char Meruru.ArmL1,ArmR1_1,Surprised pos:50,50 scale:1.0 !Lazy
+
+@voice "Hewkick_complement1_5_main_099"
+Meruru: 呀！！！
+;Hewkick_complement1_5_main_099
+;きゃっ！！！
+
+@voice "Hewkick_complement1_5_main_100"
+Nanoka: 为什么你要这么做！<br>樱羽艾玛她们...还把你当作朋友！
+;Hewkick_complement1_5_main_100
+;なぜこんなことをするの！桜羽エマたちは……あなたのことを友達だと思っていたのに！
+
+@voice "Hewkick_complement1_5_main_101"
+@char Meruru.ArmR1_1,Pensive,ArmL13 pos:50,50 scale:1.0 !Lazy
+Meruru: 对不起！艾玛她们，确实是我的朋友...<br>奈叶香小姐，也是我的朋友！<br>但是，但是！这一切都是为了找到大魔女大人！
+;Hewkick_complement1_5_main_101
+;ごめんなさい！エマさんたちは、本当に私の友達です……ナノカさんも、私の友達です！でも、でも！これは全部、大魔女様を見つけるためなんです！
+
+@voice "Hewkick_complement1_5_main_102"
+@char Meruru.Smile1,ArmR4_1,ArmL9 pos:50,50 scale:1.0 !Lazy
+Meruru: 如果是为了大魔女大人，<br>让我做什么都可以！
+;Hewkick_complement1_5_main_102
+;大魔女様のためなら、何でもできます！
+
+@hide Meruru !Lazy
+
+【大魔女】【魔女岛的历史】【魔女因子】...<br>这些词汇，和我刚才【幻视】到的...
+就在这一刻，我全部理解了。
+
+@char Meruru.Smile1,Eyes1_Smile_Closed1 pos:50,25 scale:1.5 !Lazy
+这个伪善的圣洁修女，才是【幕后黑手】。
+
+@char Meruru.Smile1,Eyes1_Smile_Closed1 pos:50,65 scale:1.5 time:3.0 !Lazy
+为了找到那个白发少女，也就是【大魔女】，<br>她的手上不知沾染了多少少女的鲜血——
+
+@hide Meruru !Lazy
+
+@voice "Hewkick_complement1_5_main_103"
+Meruru: 本来，我以为奈叶香小姐...<br>才是那个会动手杀人的呢。
+;Hewkick_complement1_5_main_103
+;本当は  ナノカさんこそが……人を手にかけるような人だと思っていたんです。
+
+@voice "Hewkick_complement1_5_main_104"
+@char Meruru.Surprised,ArmR9_1,ArmL13 pos:50,50 scale:1.0 !Lazy
+Meruru: 为此...为此！我才特意选择你的姐姐作为此次的看守。
+;Hewkick_complement1_5_main_104
+;そのために……そのために！今回の看守として、わざわざあなたのお姉さんを選んだんです。
+
+@voice "Hewkick_complement1_5_main_105"
+@char Meruru.ArmR9_1,ArmL13,Cry pos:50,50 scale:1.0 !Lazy
+Meruru: 我还，我还为你准备了一场精彩的处刑表演！<br>只是为了促进奈叶香小姐的魔女化！
+;Hewkick_complement1_5_main_105
+;私は、私はナノカさんのために素晴らしい処刑ショーまで用意したんです！ナノカさんの魔女化を促すためだけに！
+
+@voice "Hewkick_complement1_5_main_106"
+Meruru: 只可惜...大家看不到了呢......
+;Hewkick_complement1_5_main_106
+;残念ながら……みんな見られなくなってしまいましたね……
+
+Nanoka: ......
+
+@voice "Hewkick_complement1_5_main_108"
+@char Meruru.Surprised,Arms1_1 pos:50,50 scale:1.0 !Lazy
+Meruru: 我知道！奈叶香小姐一直在靠自己的【幻视】魔法，<br>试图找到拯救自己姐姐的办法。
+;Hewkick_complement1_5_main_108
+;分かっています！ナノカさんはずっと自分の【幻視】魔法を使って、お姉さんを救う方法を探し続けていたんですよね。
+
+@voice "Hewkick_complement1_5_main_109"
+@char Meruru.Arms1_1,Smile1 pos:50,50 scale:1.0 !Lazy
+Meruru: 我也一样！<br>我...我也一直在寻找让大魔女大人回来的办法！
+;Hewkick_complement1_5_main_109
+;私も同じです！私も……私もずっと、大魔女様を呼び戻す方法を探し続けていたんです！
+
+@voice "Hewkick_complement1_5_main_110"
+@char Meruru.Arms1_1,Smile1,Eyes1_Smile_Closed1 pos:50,50 scale:1.0 !Lazy
+Meruru: 所以，我们是可以共通的呢！
+;Hewkick_complement1_5_main_110
+;だから、私たちは分かり合えるはずです！
+
+@hide Meruru !Lazy
+令人作呕。
+
+@voice "Hewkick_complement1_5_main_111"
+@char Meruru.ArmL12,ArmR1_1,Default pos:50,50 scale:1.0 !Lazy
+Meruru: 我想跟奈叶香小姐做一个【交易】。
+;Hewkick_complement1_5_main_111
+;ナノカさんと【取引】がしたいんです。
+
+@voice "Hewkick_complement1_5_main_112"
+@char Meruru.ArmL12,ArmR1_1,Smile1 pos:50,50 scale:1.0 !Lazy
+Meruru: 我的魔法实际上是非常强大的哦？<br>不管是有机物，还是无机物，我都可以让它们恢复！<br>外面房间的操作面板就是我【治療】好的哦！
+;Hewkick_complement1_5_main_112
+;私の魔法は実はとても強力なんですよ？有機物でも無機物でも、何でも回復させられます！外の部屋の操作盤も私が【治療】したんですよ！
+
+@voice "Hewkick_complement1_5_main_113"
+@char Meruru.Smile1,ArmL2,ArmR3_1 pos:50,50 scale:1.0 !Lazy
+Meruru: 所以，我可以完全治好奈叶香小姐，<br>让所有看守与典狱长，都不再与你为敌。<br>并给奈叶香小姐充足的自由，去寻找让你姐姐恢复的办法！
+;Hewkick_complement1_5_main_113
+;だから、ナノカさんを完全に治して、すべての看守とゴクチョーがあなたの敵にならないようにできます。そしてナノカさんに十分な自由を与えて、お姉さんを回復させる方法を探せるようにします！
+
+@voice "Hewkick_complement1_5_main_114"
+@char Meruru.Arms1_1,Smile1,Eyes1_Smile_Closed1 pos:50,50 scale:1.0 !Lazy
+Meruru: 我们是可以互相理解的！对吧！
+;Hewkick_complement1_5_main_114
+;私たちは分かり合えます！そうでしょう！
+
+@voice "Hewkick_complement1_5_main_115"
+Meruru: 但相对应的，
+;Hewkick_complement1_5_main_115
+;でも、その代わりに、
+
+冰上梅露露从兜里拿出了一张照片。
+
+@hideChars !Lazy
+@back 160_1 Id:"Stills" Scale:{g_backgroundDefaultScale} !Lazy
+; @char Meruru.Smile1,ArmL7,ArmR1_1 pos:50,50 scale:1.0 !Lazy
+
+@voice "Hewkick_complement1_5_main_116"
+Meruru: 奈叶香小姐要用自己的【幻视】魔法，<br>帮我找到照片上的大魔女大人！
+;Hewkick_complement1_5_main_116
+;ナノカさんの【幻視】魔法を使って、写真の大魔女様を見つけてほしいんです！
+
+@voice "Hewkick_complement1_5_main_117"
+Meruru: 并且，和我做好朋友，一起管理这座监狱！
+;Hewkick_complement1_5_main_117
+;そして、私の友達になって、一緒にこの監獄を管理してください！
+
+@voice "Hewkick_complement1_5_main_118"
+Meruru: 我真的...一个人好孤独...
+;Hewkick_complement1_5_main_118
+;私、本当に……一人でとても寂しいんです……
+
+@voice "Hewkick_complement1_5_main_119"
+Meruru: 奈叶香小姐不要想着杀死我哟？<br>因为，我是真正的魔女，跟看守...不，<br>你的姐姐一样，是杀不死的哦？
+;Hewkick_complement1_5_main_119
+;ナノカさん、私を殺そうなんて思わないでくださいね？私は本物の魔女ですから、看守さん……いいえ、あなたのお姉さんと同じで、殺せないんですよ？
+
+;？？？
+@hide Stills !Lazy
+; @back 26_1 Scale:{g_backgroundDefaultScale} !Lazy
+
+@voice "Hewkick_complement1_5_main_120"
+@char Meruru.Arms1_1,Smile1 pos:50,50 scale:1.0 !Lazy
+Meruru: 所以，跟我一起吧——
+;Hewkick_complement1_5_main_120
+;だから、一緒に来てください——
+
+@hide Meruru !Lazy
+不急于回复梅露露，<br>我尽可能整理起已有的信息。
+
+@back nnk_no_blood_CG_AI Scale:{g_backgroundDefaultScale} !Lazy
+想起刚才幻视到的内容，<br>我【没有任何血迹与伤口】地，躺在审判庭上......
+......还有，<br>那个从未示人的，【治疗】魔法的真实能力......
+
+@back 26_1 Scale:{g_backgroundDefaultScale} !Lazy
+
+@voice "Hewkick_complement1_5_main_121"
+Nanoka: （必须，要留下点什么！）
+;Hewkick_complement1_5_main_121
+;（何か、残さなければ！）
+
+否则，替我把风的樱羽艾玛就会...！
+
+; 背景从左到右移动
+@back id:MainBackground pos:70,50 scale:1.5 time:1.5 easing:"SmoothStep" !Lazy
+@back id:MainBackground pos:30,50 scale:1.5 time:1.5 easing:"SmoothStep" !Lazy
+急切地环视四周，<br>只能看到一些尖锐的冰块碎片四散在周围。
+
+@back id:MainBackground pos:50,50 scale:1.15 time:1.0 easing:"SmoothStep" !Lazy
+@char Nanoka.OptionB_Off,Angry,ArmL1,ArmR1 pos:50,50 scale:1.0 !Lazy
+
+@voice "Hewkick_complement1_5_main_123"
+Nanoka: （但是，这些还不够...！）
+;Hewkick_complement1_5_main_123
+;（でも、これだけじゃ足りない……！）
+
+@hide Nanoka !Lazy
+
+（目光向上扫去，只能勉强看清密码箱的密码面板。）
+@char Nanoka.OptionB_Off,Angry,ArmL1,ArmR1 pos:50,50 scale:1.0 !Lazy
+
+只好赌一把了！
+
+@voice "Hewkick_complement1_5_main_125"
+Nanoka: （樱羽艾玛，我相信你！利用我，活下去吧！）
+;Hewkick_complement1_5_main_125
+;（桜羽エマ、あなたを信じる！私を利用して、生き延びて！）
+
+@hide Nanoka !Lazy
+
+然后，现在只需要——
+; 背景颤动
+@sfx "Sfx_10"
+@back id:MainBackground pos:53,50 scale:1.15 time:0.04 easing:"Linear" !Lazy
+@back id:MainBackground pos:47,50 scale:1.15 time:0.04 easing:"Linear" !Lazy
+@back id:MainBackground pos:50,53 scale:1.15 time:0.04 easing:"Linear" !Lazy
+@back id:MainBackground pos:50,47 scale:1.15 time:0.04 easing:"Linear" !Lazy
+@back id:MainBackground pos:53,50 scale:1.15 time:0.04 easing:"Linear" !Lazy
+@back id:MainBackground pos:47,50 scale:1.15 time:0.04 easing:"Linear" !Lazy
+@back id:MainBackground pos:50,53 scale:1.15 time:0.04 easing:"Linear" !Lazy
+@back id:MainBackground pos:50,47 scale:1.15 time:0.04 easing:"Linear" !Lazy
+@back id:MainBackground pos:50,50 scale:1.15 time:0.04 easing:"Linear" !Lazy
+
+@char Nanoka.OptionB_Off,Angry,ArmR1,ArmL1 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_126"
+Nanoka: 想都别想！
+;Hewkick_complement1_5_main_126
+;考えるな！
+
+一股难以言说的愤怒包裹了全身，<br>把我的话语，夹杂着血腥的空气，<br>狠狠吐了出来。
+@hide Nanoka !Lazy
+
+@voice "Hewkick_complement1_5_main_127" volume:0.9
+@char Meruru.ArmL1,ArmR1_1,Fearful pos:50,50 scale:1.0 !Lazy
+Meruru: ！！！！
+;Hewkick_complement1_5_main_127
+;！！！！
+
+@voice "Hewkick_complement1_5_main_128"
+@char Meruru.ArmL5,ArmR3_1,Normal1 pos:50,50 scale:1.0 !Lazy
+Meruru: 我们...真的无法互相理解吗？奈叶香小姐。
+;Hewkick_complement1_5_main_128
+;私たちは……本当に分かり合えないんですか？ナノカさん。
+
+@voice "Hewkick_complement1_5_main_129"
+@char Meruru.ArmL5,ArmR3_1,Normal1,Eyes1_Cry_Closed3 pos:50,50 scale:1.0 !Lazy
+Meruru: 可真是遗憾呢。
+;Hewkick_complement1_5_main_129
+;残念ですね。
+
+@hide Meruru !Lazy
+冰上梅露露停止了治疗，站了起来。<br>那股难以忍受的疼痛感，又一次出现在了腹腔。
+我的生命，正随着一只只血色蝴蝶，消散在四周。
+
+@voice "Hewkick_complement1_5_main_130" volume:0.6
+Meruru: 让我找找...那把斧头，应该就在附近放着呢......
+;Hewkick_complement1_5_main_130
+;探してみましょう……あの斧、近くに置いてあるはずですし……
+
+@hide Meruru !Lazy
+
+看到梅露露远离了自己，<br>我迅速拿起一片冰块碎片，将其割向自己的上颚。
+
+@voice "Hewkick_complement1_5_main_131"
+Nanoka: （冰上梅露露，你可千万不要注意到...）
+;Hewkick_complement1_5_main_131
+;（氷上メルル、どうか気づかないで……）
+
+; 奈叶香立绘缓慢上升
+@char Nanoka.ArmR1,OptionB_Off,Angry,Sweat1_1,ArmL4 pos:50,0 scale:1.0 !Lazy
+@char Nanoka.ArmR1,OptionB_Off,Angry,Sweat1_1,ArmL4 pos:50,45 scale:1.0 time:3.0 !Lazy
+用尽最后一点力气，撑着自己的身体，<br>在保险箱那隐藏了数字的密码面板上，用自己的鲜血，<br>凭记忆，按下了三个数字。
+
+; 奈叶香立绘迅速倒下，离开屏幕
+@char Nanoka.OptionB_Off,Angry,Sweat1_1,Eyes1_Normal_Closed1,ArmL1,ArmR6 pos:50,-100 scale:1.0 time:0.7 !Lazy
+@hide Nanoka !Lazy
+@sfx "Sfx_10"
+我再也支撑不住了。<br>最后一次，疲软地倒向地面。
+
+@voice "Hewkick_complement1_5_main_132"
+Nanoka: （还有...）
+;Hewkick_complement1_5_main_132
+;（それから……）
+
+...姐姐，对不起...我来找你了...
+
+@hide Nanoka !Lazy
+最后，是无尽的黑暗。
+
+@stopBgm
+@Wait "1.5"
+
+; 尾声
+@back SubId:"Overlay" SolidColor tint:"#000000" time:0.01 Lazy:false
+@Wait "0.01"
+
+Unknown: 喂！奈奈，奈奈，起床啦！
+;ねえ！ナナ、ナナ、起きてよ！
+
+@voice "Hewkick_complement1_5_main_134"
+Nanoka: 啊，再睡 5 分钟......
+;Hewkick_complement1_5_main_134
+;あ、あと5分だけ……
+
+@voice "Hewkick_complement1_5_main_135"
+Nanoka: 不对！
+;Hewkick_complement1_5_main_135
+;違う！
+
+; 纯白背景
+@back all_white_background Scale:{g_backgroundDefaultScale} !Lazy
+@back Transparent.Custom SubId:"Overlay" dissolve:"VerticalBlindGradually" tint:"#000000" time:0.5 !Lazy
+@Wait "0.5"
+; @Wait "0.5"
+
+@char Nanoka.OptionB_Off,Arms4,Angry pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_136"
+Nanoka: 不要整这种魔法小把戏！<br>否则我的子弹会......
+;Hewkick_complement1_5_main_136
+;こんな魔法の小細工はやめなさい！さもなければ私の弾が……
+
+@hide Nanoka !Lazy
+@Wait "0.5"
+
+@char Nanoka.OptionB_Off,Surprised,Arms1 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_137"
+Nanoka: 姐...姐姐？
+;Hewkick_complement1_5_main_137
+;お、お姉ちゃん？
+
+Unknown: 嗯，奈奈...
+;うん、ナナ……
+
+@char Nanoka.OptionB_Off,Arms4,Angry pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_138"
+Nanoka: 闭嘴！你不是姐姐！
+;Hewkick_complement1_5_main_138
+;黙って！あなたはお姉ちゃんじゃない！
+
+@voice "Hewkick_complement1_5_main_139"
+@char Nanoka.OptionB_Off,Arms4,Cry,Sweat1_1 pos:50,50 scale:1.0 !Lazy
+Nanoka: 真正的姐姐，早就，早就......
+;Hewkick_complement1_5_main_139
+;本物のお姉ちゃんは、もうとっくに、とっくに……
+
+Unknown: 奈奈已经很努力了呢。
+;ナナ、すごく頑張ったね。
+
+Unknown: 所以，可以休息了哦？
+;だから、もう休んでいいよ？
+
+@char Nanoka.OptionB_Off,Arms4,Cry,Sweat1_1,Eyes1_Rage_Open1,Mouth1_Angry_Open1 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_140"
+Nanoka: 我说过闭嘴！
+;Hewkick_complement1_5_main_140
+;黙れって言ったでしょ！
+
+@voice "Hewkick_complement1_5_main_141"
+Nanoka: 马上解除你的魔法！<br>否则我会立刻开枪！
+;Hewkick_complement1_5_main_141
+;今すぐその魔法を解きなさい！さもなければ今すぐ撃つわ！
+
+@hide Nanoka !Lazy
+Unknown: 原来，奈奈你变了这么多啊...
+;ナナって、こんなに変わったんだね……
+
+@char Nanoka.OptionB_Off,Arms4,Cry,Sweat1_1,Mouth1_Angry_Open1 pos:50,50 scale:1.0 !Lazy
+Nanoka: ......
+
+@char Nanoka.OptionB_Off,Cry,Sweat1_1,Arms1,Angle01/Head/Head01/Eyes01>Eyes01_Normal_Closed02 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_143"
+Nanoka: 我是不是，已经死了？
+;Hewkick_complement1_5_main_143
+;私は、もう死んでいるの？
+
+Unknown: ......
+;……
+
+@char Nanoka.OptionB_Off,Cry,Sweat1_1,Arms1,Angle01/Head/Head01/Mouth01>Mouth01_Angry_Open01 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_144"
+Nanoka: 回答我啊！！！
+;Hewkick_complement1_5_main_144
+;答えてよ！！！
+
+@char Nanoka.OptionB_Off,Cry,Sweat1_1,Arms1,Angle01/Head/Head01/Eyes01>Eyes01_Normal_Closed02 pos:50,50 scale:1.0 !Lazy
+
+Unknown: ......
+
+@ResetText
+
+@Wait "3.0"
+
+@bgm "Bgm_40_1_Loop" intro:"Bgm_40_1_Intro" volume:3.3
+
+@char Nanoka.OptionB_Off,Cry,Sweat1_1,Arms1,Angle01/Head/Head01/Mouth01>Mouth01_Angry_Open01 pos:50,50 scale:1.0 !Lazy
+@voice "Hewkick_complement1_5_main_146"
+Nanoka: ...我是不是，已经死了？
+;Hewkick_complement1_5_main_146
+;……私は、もう死んでいるの？
+
+Unknown: ......
+;……
+
+Unknown: 嗯......
+;うん……
+
+@hide Nanoka !Lazy
+
+@back all_black_background Scale:{g_backgroundDefaultScale} !Lazy
+
+@sfx "Sfx_10" volume:0.8
+
+@Wait "1.5"
+
+; CG1_01_AI
+@back CG1_01_AI Scale:{g_backgroundDefaultScale} !Lazy
+@back Transparent.Custom SubId:"Overlay" dissolve:"Diamonds15" tint:"#000000" time:0.5 !Lazy
+@Wait "0.5"
+
+@voice "Hewkick_complement1_5_main_147"
+Nanoka: 对不起...姐姐...
+;Hewkick_complement1_5_main_147
+;ごめんなさい……お姉ちゃん……
+
+@voice "Hewkick_complement1_5_main_148"
+Nanoka: 我做的，还不够好...
+;Hewkick_complement1_5_main_148
+;私、まだ足りなかった……
+
+Unknown: ......
+;……
+
+@Wait "1.0"
+
+; CG1_02_AI
+@back CG1_02_AI Scale:{g_backgroundDefaultScale} !Lazy
+
+Unknown: ......
+;……
+
+Unknown: 奈奈在我心中，永远是最棒的哦？
+;ナナは私の中で、ずっと一番だよ？
+
+Unknown: 坚持了那么久都没有伤害别人，<br>还能一个人调查出那么多的事情，<br>姐姐都看在眼里呢！
+;あんなに長い間、誰も傷つけずに頑張って、一人でそんなにたくさんのことを調べて、全部お姉ちゃんは見てたよ！
+
+Nanoka: ......
+;Hewkick_complement1_5_main_151
+;……
+
+@Wait "1.5"
+
+@voice "Hewkick_complement1_5_main_152"
+Nanoka: 我好想你...姐姐...
+;Hewkick_complement1_5_main_152
+;会いたかった……お姉ちゃん……
+
+Unknown: 嗯，我也想奈奈啦！
+;うん、私もナナに会いたかったよ！
+
+; CG_03
+@back CG1_03_AI Scale:{g_backgroundDefaultScale} !Lazy
+
+Unknown: 唔...姐姐我啊，想吃奈奈做的点心啦，可以吗？
+;うーん……お姉ちゃんね、ナナの作ったお菓子が食べたいな、ダメ？
+
+@voice "Hewkick_complement1_5_main_153"
+Nanoka: 嗯！当然可以！
+;Hewkick_complement1_5_main_153
+;うん！もちろんだよ！
+
+Unknown: 太好啦！我们还有很多时间可以聊呢！
+;やったー！まだたくさん話す時間があるね！
+
+Unknown: 那么，奈奈——
+;それじゃあ、ナナ——
+
+@back SubId:"Overlay" SolidColor tint:"#000000" time:0.5 Lazy:false
+@Wait "0.5"
+
+欢迎回家。
+
+
+【魔裁 1-5 剧情补完 END】<br> by Hewkick
+
+@stopBgm
+
+
+
+
+; 结束化日常活动状态
+@Gosub System/System_Subroutine.EndAdv
+
+; 跳转到结束
+@goto Hewkick_complement1_5/Tools.EndToTitle
+
+; @hide Sherry !Lazy
+; @back 5_1 Scale:{g_backgroundDefaultScale} !Lazy
+; ; 最上面的黑色遮罩层VerticalBlindGradually特效消失
+; @back Transparent.Custom SubId:"Overlay" dissolve:"VerticalBlindGradually" tint:"#000000" time:0.99 !Lazy
+; ; 等待一小会到特效演完
+; @Wait "0.9"

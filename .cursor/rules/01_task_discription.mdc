@@ -62,7 +62,7 @@ Sherry: 我可是看着悬疑小说长大的，那些故事里的凶手都太笨
 | 场景 | 位置 |
 |:-----|:-----|
 | 单角色 | `pos:50,50`（居中） |
-| 双角色 | 左 `pos:25,50`，右 `pos:75,50` |
+| 双角色 | 左 `pos:30,50`，右 `pos:70,50` |
 | 范围 | `pos` 的 x、y 应在 `[0, 100]` 内 |
 
 ### 4.3 参数说明
@@ -99,8 +99,32 @@ Sherry: 我可是看着悬疑小说长大的，那些故事里的凶手都太笨
 @back 23_6 Scale:{g_backgroundDefaultScale} !Lazy
 ; 最上面的黑色遮罩层VerticalBlindGradually特效消失
 @back Transparent.Custom SubId:"Overlay" dissolve:"VerticalBlindGradually" tint:"#000000" time:0.99 !Lazy
-; 等待一小会到特效演完
+; 等待一小会到特效演完，这里是插入了一个黑色遮罩层
 @Wait "0.9"
+```
+
+- 使用不同文件夹路径的背景（如分 MainBackground / Stills）
+
+```
+;Id 不填就是默认 MainBackground
+@back 160_1 Id:"Stills" Scale:{g_backgroundDefaultScale} !Lazy ;这个是指定为 Stills
+@hide Stills !Lazy ;隐藏 Stills 层
+```
+
+- 整体移动（背景角色全移动）
+
+```
+@ResetText
+@camera Offset:-6,3 Zoom:0.5 easing:"SmoothStep" time:0.9
+```
+
+- 只移动背景，只用 `@back` 即可
+
+```
+; 背景从左到右移动
+@back id:MainBackground pos:70,50 scale:1.5 time:1.5 easing:"SmoothStep" !Lazy
+@back id:MainBackground pos:30,50 scale:1.5 time:1.5 easing:"SmoothStep" !Lazy
+急切地环视四周，<br>只能看到一些尖锐的冰块碎片四散在周围。
 ```
 
 ---
@@ -164,7 +188,54 @@ CharacterName: 台词内容
 
 ---
 
-## 九、其他规则文件
+## 九、魔女审判、搜查、做出选择等
+
+- 搜查到了一个证据
+
+```
+@spawn "Clue" Params:1-8
+@toast "魔女图鉴 更新…"
+@update "1-8" Category:"Clue" Version:1
+@Wait "i1.2"
+
+@despawn "Clue"
+@Wait "0.6"
+```
+
+- 做出选择
+
+```
+@print "（诺亚在临死前作画的方法……<br>　那就是……！）" author:"Ema" waitInput:true Wait:tru
+
+@choice "手指"
+    @sfx "Sfx_System_SaveData_001_2x"
+    @goto .Judge1-1-6
+
+@choice "魔法"
+    @sfx "Sfx_System_SaveData_001_2x"
+    @goto .Judge1-1-5
+
+@choice "吹气"
+    @sfx "Sfx_System_SaveData_001_2x"
+    @goto .Judge1-1-7
+
+@StopForChoice
+
+# Judge1-1-6
+
+;xxxxx
+
+# Judge1-1-7
+
+;xxxxx
+
+# Judge1-1-5
+
+;xxxxx
+```
+
+
+## 其他规则文件
 
 | 文件 | 用途 |
 |:-----|:-----|
@@ -177,7 +248,7 @@ CharacterName: 台词内容
 
 ---
 
-## 十、代码规范
+## 代码规范
 
 - 在逻辑段落之间合理换行
 - 善用 one-shot / few-shot 思维，参考现有脚本风格

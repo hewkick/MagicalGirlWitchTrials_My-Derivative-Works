@@ -47,57 +47,38 @@ Hewkick_complement1_3/
 
 ---
 
-### 三、生成配音清单
-
-在插入 `@voice` 之前，需先生成配音清单 CSV（供翻译、AI 配音、人工校对使用）。
-
-**工具**：`tools/nani_to_voice_list.py`
-
-**用法**（在项目根目录执行）：
-
-```bash
-# 基本用法：输出与 nani 同目录，文件名为 <脚本名>_voice_list.csv
-python tools/nani_to_voice_list.py <nani文件路径>
-
-# 指定输出路径
-python tools/nani_to_voice_list.py <nani文件路径> [输出CSV路径]
-```
-
-**示例**：
-
-```bash
-python tools/nani_to_voice_list.py Hewkick_complement1_3/Scripts/Hewkick_complement1_3/Main.nani
-# → 输出 Hewkick_complement1_3/Scripts/Hewkick_complement1_3/Main_voice_list.csv
-```
-
-**AI 自动执行**：当用户要求「生成配音清单」「提取配音列表」「为 xxx.nani 生成 voice list」等时，应主动执行上述命令，无需用户手动运行。
-
----
-
-### 四、在脚本中插入配音
-
-1. **配音清单**：使用上述工具生成 `*_voice_list.csv`，其中「文件名」列（如 `Main_001`、`Main_002`）按对话出现顺序编号
-2. **插入位置**：在每条**角色对话行**前插入对应的 `@voice` 指令
-3. **顺序对应**：CSV 中第 N 行 → 脚本中第 N 条角色对话 → `@voice "母文件夹名/文件名"`
-
-示例：
-
-```naninovel
-@char Hanna.ArmL1,ArmR2,Pensive pos:75,50 Scale:1.0 !Lazy
-@voice "Hewkick_complement1_3/Main_004"
-Hanna: （真是的，明明就要当凶手了，却还那么兴奋...）
-
-@char Hanna.ArmL1,Default,ArmR1 pos:75,50 Scale:1.0 !Lazy
-@voice "Hewkick_complement1_3/Main_005"
-Hanna: 那么，我就把绳子交给你了。
-@voice "Hewkick_complement1_3/Main_006"
-Hanna: 要让这座监狱的管理者知道，<br>不是所有人都会心甘情愿地接受既定的命运......
-```
-
----
-
-### 五、注意事项
+### 三、注意事项
 
 - **旁白不配音**：仅对 `角色名: 台词` 形式的对话添加 `@voice`
 - **配音角色**：仅对 15 个需要配音的角色添加（见 [02_role_name.mdc](./02_role_name.mdc) 中 Alisa、AnAn、Coco、Ema、Hanna、Hiro、Leia、Margo、Meruru、Miria、Nanoka、Noah、Sherry、Warden、Yuki 及前 13 个角色的魔女化形态，要注意 Warden 和 Yuki 是没有魔女化形态的）
 - **多剧本**：不同剧本使用不同的母文件夹名，路径互不冲突
+- 配音支持 WAV 格式，要求双声道采样率44100Hz
+
+---
+
+### 四、翻译注释与配音编号对应
+
+在翻译任务中，每句需要配音的角色对话下方会插入两行注释：
+
+```
+角色名: 中文台词
+;Hewkick_complement1_5_main_001        ← 配音编号注释（全小写，三位数字从 001 起）
+;日本語の翻訳                           ← 日语翻译注释
+```
+
+- 翻译的时候，要忽略 `<br>`
+
+
+```naninovel
+@char Nanoka.Arms1,OptionB_Off,Pensive,Eyes1_Normal_Closed2 pos:50,50 scale:1.0 !Lazy
+
+；@voice "Hewkick_complement1_5/Hewkick_complement1_5_main_013"
+Nanoka: （不行。樱羽艾玛那个样子，<br>绝对是有什么不得不立刻去做的事情。）
+;Hewkick_complement1_5_main_013
+;（いえ。桜羽エマのあの様子、絶対に今すぐやらなければならないことがあるはずだわ。）
+
+@voice "Hewkick_complement1_5/Hewkick_complement1_5_main_014"
+Nanoka: （行凶准备？她不像是会动手的那种人，<br>但魔女化后谁也说不好。）
+;Hewkick_complement1_5_main_014
+;（犯行準備？桜羽エマはそんなことをするような人には見えないけれど、魔女化した後は誰にも分からないわ。）
+```
