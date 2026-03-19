@@ -2,11 +2,6 @@
 
 - **作者**：Hewkick · [B 站链接](https://space.bilibili.com/105344359) · [GitHub 链接](https://github.com/hewkick)
 
-- 本项目采用混合授权模式：
-    - 本项目核心内容遵循 CC BY-NC 4.0 协议。并在此基础上提供了额外的授权：
-    - 所有 Python 脚本及 Cursor 规则文件（`.mdc`），完全自由使用;
-    - 剧本内容具体限制请参阅 `LICENSE` 文件开头的补充说明。
-
 ---
 
 ### 一、项目说明
@@ -72,3 +67,22 @@
 > 在那样的时刻，她心中究竟是愤怒、不甘、遗憾、还是...?
 >
 > 欢迎讨论！希望大家喜欢！
+>
+
+### 版权声明与免责声明（中文）
+1.  **原IP权利归属**：本项目为基于《魔法少女的魔女审判》（《魔法少女ノ魔女裁判》）的同人创作项目，该IP相关的世界观、角色名称、形象设定、原始素材等全部版权内容，均归原版权方所有。本项目未获得原版权方官方授权，仅为个人非商业同人创作。
+2.  **非商用与使用限制**：本项目内容（含代码、衍生创作素材）仅供个人学习交流、非盈利同人创作参考使用，**严禁任何形式的商业化使用、企业/机构用途使用**。个人基于本项目进行的非商业二创，在内容平台获得的创作激励/平台分成，不视为本声明禁止的商业化行为。
+3.  **侵权告知与处理**：本项目严格尊重原版权方的知识产权，无意侵犯任何合法权益。若原版权方认为本项目内容存在侵权、不妥之处，请通过 [hewkick@gmail.com](hewkick@gmail.com) 与我联系，我将在收到通知后第一时间配合进行内容删除、修改等合规处理。
+4.  **免责声明**：本项目按「原样」提供，作者不对任何因使用本项目内容所产生的直接或间接责任负责，使用者因违反本声明或相关法律法规造成的一切后果，由使用者自行承担。
+
+### Copyright Notice and Disclaimer（English）
+1.  **Original IP Rights Ownership**：This project is a fan-made derivative work based on MagicalGrilWitchTrials (《魔法少女ノ魔女裁判》). All copyrightable content related to this IP, including but not limited to the world view, character names, character settings, and original materials, is the exclusive property of the original copyright holder. This project has not received official authorization from the original copyright holder, and is solely a personal non-commercial fan creation.
+2.  **Non-Commercial Use and Usage Restrictions**：The content of this project (including code and derivative creative materials) is only for personal learning and communication, as well as reference for non-profit fan creation. **Any form of commercial use, or use by enterprises/institutions is strictly prohibited**. Creator incentives or platform revenue sharing obtained by individuals from content platforms for non-commercial secondary creations based on this project shall not be deemed as commercial use prohibited under this notice.
+3.  **Infringement Notification and Handling**：This project strictly respects the intellectual property rights of the original copyright holder and has no intention to infringe any legitimate rights and interests. If the original copyright holder believes that the content of this project is infringing or inappropriate, please contact me via [hewkick@gmail.com](hewkick@gmail.com). I will promptly cooperate to delete or modify the content and take other compliance measures immediately upon receipt of the notice.
+4.  **Disclaimer**：This project is provided "as-is". The author shall not be held liable for any direct or indirect liabilities arising from the use of the content of this project. All consequences caused by the user's violation of this notice or relevant laws and regulations shall be borne solely by the user.
+
+### 著作権表示と免責事項 (Japanese)
+1.  **原作IPの権利帰属**：本プロジェクトは『魔法少女ノ魔女裁判』を原作とした二次創作プロジェクトです。当該IPに関する世界観、キャラクター名、設定、原画素材を含む全ての著作権は、原著作権者に帰属します。本プロジェクトは原著作権者様の公式な許諾を得ておらず、個人による非営利の二次創作として制作したものです。
+2.  **非営利規定と利用制限**：本プロジェクトの内容（コード、派生創作素材を含む）は、個人の学習・交流、非営利の二次創作の参考に限り利用できます。**商業的な利用、企業・団体による利用は、形態を問わず固く禁止します。** 個人が本プロジェクトを基に制作した非商業的な二次創作について、コンテンツプラットフォームから付与されるクリエイター奨励金・広告収入分配は、本声明で禁止する商業的利用には該当しないものとします。
+3.  **権利侵害に関するご連絡**：本プロジェクトは原著作権者様の知的財産権を最大限尊重し、権利を侵害する意図は一切ございません。原著作権者様より、本プロジェクトの内容につき権利侵害や不適切な点があるとご判断された場合は、[hewkick@gmail.com](hewkick@gmail.com) までご連絡ください。ご連絡を受け次第、速やかにコンテンツの削除・修正などの適切な対応をさせていただきます。
+4.  **免責事項**：本プロジェクトの内容は「現状有姿」で提供されます。作者は、本プロジェクトの内容を利用したことによって生じた一切の直接的・間接的な責任を負いません。利用者が本声明または関連法令に違反したことで生じた全ての結果については、利用者ご自身が責任を負うものとします。
