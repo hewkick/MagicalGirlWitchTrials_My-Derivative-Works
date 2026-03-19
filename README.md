@@ -2,6 +2,11 @@
 
 - **作者**：Hewkick · [B 站链接](https://space.bilibili.com/105344359) · [GitHub 链接](https://github.com/hewkick)
 
+- 本项目采用混合授权模式：
+    - 本项目核心内容遵循 CC BY-NC 4.0 协议。并在此基础上提供了额外的授权：
+    - 所有 Python 脚本及 Cursor 规则文件（`.mdc`），完全自由使用;
+    - 剧本内容具体限制请参阅 `LICENSE` 文件开头的补充说明。
+
 ---
 
 ### 一、项目说明
