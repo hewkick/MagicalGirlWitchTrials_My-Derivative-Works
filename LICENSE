@@ -1,3 +1,22 @@
+补充授权说明 / Supplementary License Terms
+
+[ZH]
+1. 作用域：本说明中的附加条款仅适用于本仓库中的剧本文本文件。
+2. 个人收益豁免：允许个人创作者将剧本用于视频、直播等二创，由此产生的平台流量分成、打赏等归创作者个人所有，不视为违反 NC（非商业）限制。
+3. 企业禁运：严禁任何企业或营利组织将剧本用于商业产品或经营活动。
+4. 衍生作品不强制开源：二创作者可自行决定是否公开其修改后的剧本源码。
+5. 署名要求：二创作品需在显著位置标注原作者及本项目地址。
+6. 代码豁免：本仓库中的所有 Python 代码及 Cursor rules 文件均属于公有领域（Public Domain），任何人可以无条件、无限制地使用、修改或分发。
+
+[EN]
+1. Scope: These additional terms apply only to the script/text files in this repository.
+2. Personal Monetization: Individual creators may use the scripts for derivative works (videos, streams, etc.). Revenue from platform sharing or donations belongs to the creator and is NOT considered a violation of the NC (Non-Commercial) restriction.
+3. Corporate Ban: Commercial enterprises or organizations are strictly prohibited from using the scripts for any commercial products or business activities.
+4. No Copyleft for Derivatives: Creators of derivative works are not required to open-source their modified scripts.
+5. Attribution: Derivative works must credit the original author and provide a link to this repository.
+6. Code Exemption: All Python code and Cursor rules files in this repository are dedicated to the Public Domain. Anyone may use, modify, or distribute them without any restrictions.
+
+
 Attribution-NonCommercial 4.0 International
 
 =======================================================================
@@ -406,22 +425,5 @@ public licenses.
 
 Creative Commons may be contacted at creativecommons.org.
 
-补充授权说明 / Supplementary License Terms
-
-[ZH]
-1. 作用域：本说明中的附加条款仅适用于本仓库中的剧本文本文件。
-2. 个人收益豁免：允许个人创作者将剧本用于视频、直播等二创，由此产生的平台流量分成、打赏等归创作者个人所有，不视为违反 NC（非商业）限制。
-3. 企业禁运：严禁任何企业或营利组织将剧本用于商业产品或经营活动。
-4. 衍生作品不强制开源：二创作者可自行决定是否公开其修改后的剧本源码。
-5. 署名要求：二创作品需在显著位置标注原作者及本项目地址。
-6. 代码豁免：本仓库中的所有 Python 代码及 Cursor rules 文件均属于公有领域（Public Domain），任何人可以无条件、无限制地使用、修改或分发。
-
-[EN]
-1. Scope: These additional terms apply only to the script/text files in this repository.
-2. Personal Monetization: Individual creators may use the scripts for derivative works (videos, streams, etc.). Revenue from platform sharing or donations belongs to the creator and is NOT considered a violation of the NC (Non-Commercial) restriction.
-3. Corporate Ban: Commercial enterprises or organizations are strictly prohibited from using the scripts for any commercial products or business activities.
-4. No Copyleft for Derivatives: Creators of derivative works are not required to open-source their modified scripts.
-5. Attribution: Derivative works must credit the original author and provide a link to this repository.
-6. Code Exemption: All Python code and Cursor rules files in this repository are dedicated to the Public Domain. Anyone may use, modify, or distribute them without any restrictions.
 
 --------------------------------------------------------------------------------
